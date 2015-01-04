@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define DigitalLifeConntectorDevicesUpdatedNotification @"DigitalLifeConntectorDevicesUpdatedNotification"
+
 @interface DigitalLifeConnector : NSObject
 
 @property (strong) NSMutableArray *devices;

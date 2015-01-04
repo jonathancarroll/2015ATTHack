@@ -26,6 +26,7 @@
 		81B06F1A1A59143700909EB9 /* M2XStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B06F0E1A59143700909EB9 /* M2XStream.m */; };
 		81B06F1B1A59143700909EB9 /* M2XTrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B06F101A59143700909EB9 /* M2XTrigger.m */; };
 		81B06F1C1A59143700909EB9 /* NSDate+M2X.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B06F121A59143700909EB9 /* NSDate+M2X.m */; };
+		81B06F1F1A59164700909EB9 /* M2XConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B06F1E1A59164700909EB9 /* M2XConnector.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,8 @@
 		81B06F101A59143700909EB9 /* M2XTrigger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2XTrigger.m; sourceTree = "<group>"; };
 		81B06F111A59143700909EB9 /* NSDate+M2X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+M2X.h"; sourceTree = "<group>"; };
 		81B06F121A59143700909EB9 /* NSDate+M2X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+M2X.m"; sourceTree = "<group>"; };
+		81B06F1D1A59164700909EB9 /* M2XConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2XConnector.h; sourceTree = "<group>"; };
+		81B06F1E1A59164700909EB9 /* M2XConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2XConnector.m; sourceTree = "<group>"; };
 		CA1E08DD1A5911610038D383 /* TransferService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransferService.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +136,8 @@
 				81B06EF81A58B53400909EB9 /* DigitalLifeConnector.m */,
 				81B06EFA1A58FC4200909EB9 /* DLDevice.h */,
 				81B06EFB1A58FC4200909EB9 /* DLDevice.m */,
+				81B06F1D1A59164700909EB9 /* M2XConnector.h */,
+				81B06F1E1A59164700909EB9 /* M2XConnector.m */,
 			);
 			path = MasterApp;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 				81B06F171A59143700909EB9 /* M2XKey.m in Sources */,
 				81B06F151A59143700909EB9 /* M2XDevice.m in Sources */,
 				81B06F161A59143700909EB9 /* M2XDistribution.m in Sources */,
+				81B06F1F1A59164700909EB9 /* M2XConnector.m in Sources */,
 				81B06F1C1A59143700909EB9 /* NSDate+M2X.m in Sources */,
 				81B06ED41A58B46E00909EB9 /* main.m in Sources */,
 				81B06F1A1A59143700909EB9 /* M2XStream.m in Sources */,

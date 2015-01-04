@@ -142,6 +142,8 @@
                         NSLog(@"deviceGuid: %@  deviceType: %@", d.deviceGuid, d.deviceType);
                     }
                     
+                    [[NSNotificationCenter defaultCenter] postNotificationName:DigitalLifeConntectorDevicesUpdatedNotification object:self];
+                    
                     //[self performSelector:@selector(authenticate) withObject:nil afterDelay:1.0];
                     
                 });

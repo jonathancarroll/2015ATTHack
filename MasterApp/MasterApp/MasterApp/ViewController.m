@@ -18,6 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     dl = [[DigitalLifeConnector alloc] init];
+    m2x = [[M2XConnector alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
