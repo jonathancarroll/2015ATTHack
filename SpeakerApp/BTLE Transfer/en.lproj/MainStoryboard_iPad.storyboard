@@ -84,6 +84,26 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dsR-d0-ncy">
+                                <rect key="frame" x="305" y="559" width="157" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="157" id="bKF-Pr-NAk"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="0"/>
+                                    <segment title="1"/>
+                                    <segment title="2"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speaker #" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mfN-sX-RXV">
+                                <rect key="frame" x="344" y="522" width="78" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="IbQ-af-vwB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.95206607680722888" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -91,14 +111,19 @@
                             <constraint firstItem="s6S-nQ-ph6" firstAttribute="top" secondItem="Fy3-SV-Gef" secondAttribute="top" constant="360" id="DHv-VW-8b8"/>
                             <constraint firstItem="5sk-yR-N1o" firstAttribute="leading" secondItem="Fy3-SV-Gef" secondAttribute="leading" constant="244" id="IRb-Nu-U0u"/>
                             <constraint firstItem="Bnn-Pk-nBO" firstAttribute="centerX" secondItem="Fy3-SV-Gef" secondAttribute="centerX" type="default" id="MHm-f3-yQ8"/>
+                            <constraint firstAttribute="bottom" secondItem="mfN-sX-RXV" secondAttribute="bottom" constant="417" id="MSs-wp-20p"/>
                             <constraint firstItem="Bnn-Pk-nBO" firstAttribute="top" secondItem="Fy3-SV-Gef" secondAttribute="top" constant="80" id="f7y-aR-jag"/>
                             <constraint firstAttribute="trailing" secondItem="s6S-nQ-ph6" secondAttribute="trailing" constant="244" id="lsM-JN-ZDd"/>
+                            <constraint firstAttribute="bottom" secondItem="dsR-d0-ncy" secondAttribute="bottom" constant="358" id="nce-ai-vNI"/>
+                            <constraint firstItem="mfN-sX-RXV" firstAttribute="centerX" secondItem="Bnn-Pk-nBO" secondAttribute="centerX" type="default" id="rCc-2N-OnX"/>
+                            <constraint firstItem="mfN-sX-RXV" firstAttribute="centerX" secondItem="dsR-d0-ncy" secondAttribute="centerX" type="default" id="rj5-n5-pqw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="i4m-Pa-H5F"/>
                     <connections>
                         <outlet property="advertisingSwitch" destination="s6S-nQ-ph6" id="vur-qM-Pp2"/>
                         <outlet property="connectedLabel" destination="Bnn-Pk-nBO" id="pkS-mv-FF5"/>
+                        <outlet property="speakerSelector" destination="dsR-d0-ncy" id="oB1-ic-pba"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="34q-pa-9fg" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -16,7 +16,7 @@
 @interface ViewController () <CBCentralManagerDelegate, CBPeripheralDelegate, EESoundDelegate, EEScenarioDelegate>
 
 @property (strong, nonatomic) CBCentralManager      *centralManager;
-@property (strong, nonatomic) NSMutableArray        *peripherals;
+@property (strong, nonatomic) NSMutableDictionary   *peripherals;
 @property (strong, nonatomic) NSMutableArray        *peripheralsConnecting;
 @property (strong, nonatomic) NSMutableDictionary   *characteristics;
 @property (strong, nonatomic) EEScenarioRunner      *scenarioRunner;
@@ -91,10 +91,10 @@
         [self.characteristics removeAllObjects];
     } else {
         self.peripheralsConnecting = [[NSMutableArray alloc] init];
-        self.peripherals = [[NSMutableArray alloc] init];
+        self.peripherals = [[NSMutableDictionary alloc] init];
         self.characteristics = [[NSMutableDictionary alloc] init];
     }
-    [self.centralManager scanForPeripheralsWithServices:@[[CBUUID UUIDWithString:TRANSFER_SERVICE_UUID]]
+    [self.centralManager scanForPeripheralsWithServices:@[[CBUUID UUIDWithString:TRANSFER_SERVICE_UUID_0], [CBUUID UUIDWithString:TRANSFER_SERVICE_UUID_1], [CBUUID UUIDWithString:TRANSFER_SERVICE_UUID_2]]
                                                 options:@{ CBCentralManagerScanOptionAllowDuplicatesKey : @YES }];
 
     NSLog(@"Scanning started");
@@ -111,8 +111,14 @@
 //    }
 
 //    NSLog(@"Discovered %@ at %@", peripheral.name, RSSI);
-
-    if (![self.peripherals containsObject:peripheral] && ![self.peripheralsConnecting containsObject:peripheral]) {
+    BOOL found = NO;
+    for (NSString* key in self.peripherals) {
+        CBPeripheral *value = [self.peripherals objectForKey:key];
+        if ([value isEqual:peripheral]) {
+            found = YES;
+        }
+    }
+    if (!found && ![self.peripheralsConnecting containsObject:peripheral]) {
         NSLog(@"Attempting to connect to peripheral %@", peripheral);
         [self.peripheralsConnecting addObject:peripheral];
         [self.centralManager connectPeripheral:peripheral options:nil];
@@ -125,8 +131,8 @@
         NSLog(@"cannot play sound. index out of range");
         return;
     }
-    if ([self.peripherals objectAtIndex:speakerId]) {
-        CBPeripheral *peripheral = [self.peripherals objectAtIndex:speakerId];
+    if ([self.peripherals objectForKey:[NSNumber numberWithInt:speakerId]]) {
+        CBPeripheral *peripheral = [self.peripherals objectForKey:[NSNumber numberWithInt:speakerId]];
         CBCharacteristic *characteristic = [self.characteristics objectForKey:peripheral];
         if (!characteristic) {
             NSArray *array = @[[NSNumber numberWithInteger:soundId], [NSNumber numberWithInteger:speakerId]];
@@ -154,7 +160,7 @@
 }
 
 - (void)namePeripheral:(NSUInteger)index withName:(NSString *)name {
-    CBPeripheral *peripheral = [self.peripherals objectAtIndex:index];
+    CBPeripheral *peripheral = [self.peripherals objectForKey:[NSNumber numberWithInt:index]];
     CBCharacteristic *characteristic = [self.characteristics objectForKey:peripheral];
     char* stuff[1];
     stuff[0] = 0x00;
@@ -167,24 +173,38 @@
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral
 {
     NSLog(@"Peripheral Connected");
-
-    if (![self.peripherals containsObject:peripheral]) {
-        [self.peripherals addObject:peripheral];
-        [self.peripheralsConnecting removeObject:peripheral];
-        NSLog(@"Connecting to peripheral %@", peripheral);
+    BOOL found = NO;
+    for (NSString* key in self.peripherals) {
+        CBPeripheral *value = [self.peripherals objectForKey:key];
+        if ([value isEqual:peripheral]) {
+            found = YES;
+        }
+    }
+    if (!found) {
 
         // Make sure we get the discovery callbacks
         peripheral.delegate = self;
 
-        // Search only for services that match our UUID
-        [peripheral discoverServices:@[[CBUUID UUIDWithString:TRANSFER_SERVICE_UUID]]];
+        // Search only for services that match our UUIDs
+        [peripheral discoverServices:@[[CBUUID UUIDWithString:TRANSFER_SERVICE_UUID_0], [CBUUID UUIDWithString:TRANSFER_SERVICE_UUID_1], [CBUUID UUIDWithString:TRANSFER_SERVICE_UUID_2]]];
     }
 }
 
 - (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error {
     NSLog(@"Peripheral Disconnected");
 
-    [self.peripherals removeObject:peripheral];
+    id theKey = nil;
+    for (NSString* key in self.peripherals) {
+        CBPeripheral *value = [self.peripherals objectForKey:key];
+        if ([value isEqual:peripheral]) {
+            theKey = key;
+        }
+    }
+
+    if (theKey) {
+        [self.peripherals removeObjectForKey:theKey];
+    }
+
     [self.characteristics removeObjectForKey:peripheral];
 
     NSDictionary* connectOptions = @{CBConnectPeripheralOptionNotifyOnConnectionKey: @YES,
@@ -205,8 +225,17 @@
     }
 
     for (CBService *service in peripheral.services) {
+        if ([service.UUID isEqual:[CBUUID UUIDWithString:TRANSFER_SERVICE_UUID_0]]) {
+            [self.peripherals setObject:peripheral forKey:[NSNumber numberWithInt:0]];
+        } else if ([service.UUID isEqual:[CBUUID UUIDWithString:TRANSFER_SERVICE_UUID_1]]) {
+            [self.peripherals setObject:peripheral forKey:[NSNumber numberWithInt:1]];
+        } else {
+            [self.peripherals setObject:peripheral forKey:[NSNumber numberWithInt:2]];
+        }
+        NSLog(@"Connecting to peripheral %@", peripheral);
         [peripheral discoverCharacteristics:@[[CBUUID UUIDWithString:TRANSFER_CHARACTERISTIC_UUID]] forService:service];
     }
+    [self.peripheralsConnecting removeObject:peripheral];
 }
 
 - (void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error
@@ -220,7 +249,14 @@
     for (CBCharacteristic *characteristic in service.characteristics) {
         if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:TRANSFER_CHARACTERISTIC_UUID]]) {
             [self.characteristics setObject:characteristic forKey:peripheral];
-            NSUInteger index = [self.peripherals indexOfObject:peripheral];
+            id theKey = nil;
+            for (NSString* key in self.peripherals) {
+                CBPeripheral *value = [self.peripherals objectForKey:key];
+                if ([value isEqual:peripheral]) {
+                    theKey = key;
+                }
+            }
+            NSUInteger index = [theKey integerValue];
             [self namePeripheral:index withName:[NSString stringWithFormat:@"Speaker %d", (int)index]];
             
             if([self.peripherals count] > 2) {

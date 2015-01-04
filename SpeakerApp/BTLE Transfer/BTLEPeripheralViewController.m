@@ -56,13 +56,14 @@
 #import "OXAudioPlayer.h"
 
 @interface BTLEPeripheralViewController () <CBPeripheralManagerDelegate, UITextViewDelegate>
-@property (strong, nonatomic) IBOutlet UITextView       *textView;
-@property (strong, nonatomic) IBOutlet UISwitch         *advertisingSwitch;
-@property (strong, nonatomic) CBPeripheralManager       *peripheralManager;
-@property (strong, nonatomic) CBMutableCharacteristic   *transferCharacteristic;
-@property (strong, nonatomic) NSData                    *dataToSend;
-@property (nonatomic, readwrite) NSInteger              sendDataIndex;
-@property (strong, nonatomic) NSMutableDictionary       *soundPlayers;
+@property (strong, nonatomic) IBOutlet UITextView           *textView;
+@property (strong, nonatomic) IBOutlet UISwitch             *advertisingSwitch;
+@property (strong, nonatomic) IBOutlet UISegmentedControl   *speakerSelector;
+@property (strong, nonatomic) CBPeripheralManager           *peripheralManager;
+@property (strong, nonatomic) CBMutableCharacteristic       *transferCharacteristic;
+@property (strong, nonatomic) NSData                        *dataToSend;
+@property (nonatomic, readwrite) NSInteger                  sendDataIndex;
+@property (strong, nonatomic) NSMutableDictionary           *soundPlayers;
 @end
 
 
@@ -121,20 +122,7 @@
     // ... so build our service.
     
     // Start with the CBMutableCharacteristic
-    self.transferCharacteristic = [[CBMutableCharacteristic alloc] initWithType:[CBUUID UUIDWithString:TRANSFER_CHARACTERISTIC_UUID]
-                                                                      properties:CBCharacteristicPropertyWrite | CBCharacteristicPropertyRead
-                                                                           value:nil
-                                                                     permissions:CBAttributePermissionsWriteable | CBAttributePermissionsReadable];
 
-    // Then the service
-    CBMutableService *transferService = [[CBMutableService alloc] initWithType:[CBUUID UUIDWithString:TRANSFER_SERVICE_UUID]
-                                                                        primary:YES];
-    
-    // Add the characteristic to the service
-    transferService.characteristics = @[self.transferCharacteristic];
-    
-    // And add it to the peripheral manager
-    [self.peripheralManager addService:transferService];
 
     [self setupSounds];
 }
@@ -246,9 +234,30 @@
  */
 - (IBAction)switchChanged:(id)sender
 {
-    if (self.advertisingSwitch.on) {
+    if (self.advertisingSwitch.on) {self.transferCharacteristic = [[CBMutableCharacteristic alloc] initWithType:[CBUUID UUIDWithString:TRANSFER_CHARACTERISTIC_UUID]
+                                                                                                     properties:CBCharacteristicPropertyWrite | CBCharacteristicPropertyRead
+                                                                                                          value:nil
+                                                                                                    permissions:CBAttributePermissionsWriteable | CBAttributePermissionsReadable];
+
+        NSString *UUID = TRANSFER_SERVICE_UUID_0;
+        if (self.speakerSelector.selectedSegmentIndex == 1) {
+            UUID = TRANSFER_SERVICE_UUID_1;
+        } else if (self.speakerSelector.selectedSegmentIndex == 2) {
+            UUID = TRANSFER_SERVICE_UUID_2;
+        }
+
+        // Then the service
+        CBMutableService *transferService = [[CBMutableService alloc] initWithType:[CBUUID UUIDWithString:UUID]
+                                                                           primary:YES];
+
+        // Add the characteristic to the service
+        transferService.characteristics = @[self.transferCharacteristic];
+        
+        // And add it to the peripheral manager
+        [self.peripheralManager addService:transferService];
+        
         // All we advertise is our service's UUID
-        [self.peripheralManager startAdvertising:@{ CBAdvertisementDataServiceUUIDsKey : @[[CBUUID UUIDWithString:TRANSFER_SERVICE_UUID]] }];
+        [self.peripheralManager startAdvertising:@{ CBAdvertisementDataServiceUUIDsKey : @[[CBUUID UUIDWithString:UUID]] }];
     }
     
     else {

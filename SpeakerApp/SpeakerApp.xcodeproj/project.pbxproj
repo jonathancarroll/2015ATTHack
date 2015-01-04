@@ -237,6 +237,11 @@
 			attributes = {
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = Apple;
+				TargetAttributes = {
+					B9F9161415D5806400B3B398 = {
+						DevelopmentTeam = U92PM5JGJC;
+					};
+				};
 			};
 			buildConfigurationList = B9F9160F15D5806400B3B398 /* Build configuration list for PBXProject "SpeakerApp" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -390,6 +395,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BTLE Transfer/SpeakerApp-Prefix.pch";
 				INFOPLIST_FILE = "BTLE Transfer/SpeakerApp-Info.plist";
@@ -406,6 +412,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BTLE Transfer/SpeakerApp-Prefix.pch";
 				INFOPLIST_FILE = "BTLE Transfer/SpeakerApp-Info.plist";

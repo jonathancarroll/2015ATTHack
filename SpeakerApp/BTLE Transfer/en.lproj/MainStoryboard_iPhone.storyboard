@@ -158,9 +158,29 @@
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Connected" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jnD-rS-wDM" userLabel="ConnectedLabel">
-                                <rect key="frame" x="101" y="20" width="117" height="21"/>
+                                <rect key="frame" x="102" y="129" width="117" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="TTO-vN-UFe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rdo-7o-64y">
+                                <rect key="frame" x="82" y="292" width="157" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="157" id="Frv-uq-ctr"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="0"/>
+                                    <segment title="1"/>
+                                    <segment title="2"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speaker #" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IVM-NK-myo">
+                                <rect key="frame" x="121" y="263" width="78" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="kOS-hU-CDp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -170,17 +190,22 @@
                         <color key="backgroundColor" white="0.94615963855421703" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="SHW-C2-RN9" secondAttribute="bottom" constant="175" id="0ya-EM-KGl"/>
+                            <constraint firstItem="jnD-rS-wDM" firstAttribute="top" secondItem="HqI-5G-qR2" secondAttribute="top" constant="129" id="5PN-oV-puT"/>
                             <constraint firstItem="SHW-C2-RN9" firstAttribute="centerY" secondItem="GMc-4O-5iW" secondAttribute="centerY" type="default" id="7Os-TG-TWq"/>
-                            <constraint firstItem="jnD-rS-wDM" firstAttribute="top" secondItem="HqI-5G-qR2" secondAttribute="top" constant="20" symbolic="YES" type="default" id="9Xa-w3-Sct"/>
+                            <constraint firstAttribute="bottom" secondItem="rdo-7o-64y" secondAttribute="bottom" constant="81" id="B3g-wQ-2fA"/>
                             <constraint firstAttribute="trailing" secondItem="SHW-C2-RN9" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Hfb-04-R3K"/>
-                            <constraint firstItem="jnD-rS-wDM" firstAttribute="centerX" secondItem="HqI-5G-qR2" secondAttribute="centerX" type="default" id="MfW-db-AS1"/>
+                            <constraint firstItem="rdo-7o-64y" firstAttribute="top" secondItem="IVM-NK-myo" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="I9O-FK-Ggf"/>
                             <constraint firstItem="GMc-4O-5iW" firstAttribute="leading" secondItem="HqI-5G-qR2" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="NUi-cv-vvL"/>
+                            <constraint firstItem="IVM-NK-myo" firstAttribute="centerX" secondItem="rdo-7o-64y" secondAttribute="centerX" type="default" id="cik-S4-czi"/>
+                            <constraint firstItem="IVM-NK-myo" firstAttribute="centerX" secondItem="HqI-5G-qR2" secondAttribute="centerX" type="default" id="dM0-31-wqN"/>
+                            <constraint firstItem="IVM-NK-myo" firstAttribute="centerX" secondItem="jnD-rS-wDM" secondAttribute="centerX" type="default" id="dVm-pp-7PW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Peripheral" id="krm-GA-4hL"/>
                     <connections>
                         <outlet property="advertisingSwitch" destination="SHW-C2-RN9" id="2XB-4o-9uq"/>
                         <outlet property="connectedLabel" destination="jnD-rS-wDM" id="rU4-fm-7Km"/>
+                        <outlet property="speakerSelector" destination="rdo-7o-64y" id="9YF-4X-aU3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Naf-L5-Kmt" userLabel="First Responder" sceneMemberID="firstResponder"/>
