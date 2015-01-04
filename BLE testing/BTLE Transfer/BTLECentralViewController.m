@@ -179,17 +179,25 @@
     if ([self.peripherals objectAtIndex:0]) {
         CBPeripheral *peripheral = [self.peripherals objectAtIndex:0];
         CBCharacteristic *characteristic = [self.characteristics objectForKey:peripheral];
-        NSString *string = [NSString stringWithFormat:@"hello"];
-        [peripheral writeValue:[string dataUsingEncoding:NSUTF8StringEncoding] forCharacteristic:characteristic type:CBCharacteristicWriteWithResponse];
+        char* stuff[1];
+        stuff[0] = 0x01;
+        NSString *name = @"0";
+        NSMutableData *data = [NSMutableData dataWithBytes:stuff length:1];
+        [data appendData:[name dataUsingEncoding:NSUTF8StringEncoding]];
+        [peripheral writeValue:data forCharacteristic:characteristic type:CBCharacteristicWriteWithResponse];
     }
 }
 
 - (IBAction)peripheral2Pressed:(id)sender {
-    if ([self.peripherals objectAtIndex:1]) {
-        CBPeripheral *peripheral = [self.peripherals objectAtIndex:1];
+    if ([self.peripherals objectAtIndex:0]) {
+        CBPeripheral *peripheral = [self.peripherals objectAtIndex:0];
         CBCharacteristic *characteristic = [self.characteristics objectForKey:peripheral];
-        NSString *string = [NSString stringWithFormat:@"hello"];
-        [peripheral writeValue:[string dataUsingEncoding:NSUTF8StringEncoding] forCharacteristic:characteristic type:CBCharacteristicWriteWithResponse];
+        char* stuff[1];
+        stuff[0] = 0x01;
+        NSString *name = @"1";
+        NSMutableData *data = [NSMutableData dataWithBytes:stuff length:1];
+        [data appendData:[name dataUsingEncoding:NSUTF8StringEncoding]];
+        [peripheral writeValue:data forCharacteristic:characteristic type:CBCharacteristicWriteWithResponse];
     }
 }
 
@@ -211,6 +219,17 @@
     [self cleanup];
 }
 
+- (void)namePeripheral:(NSUInteger)index withName:(NSString *)name {
+    CBPeripheral *peripheral = [self.peripherals objectAtIndex:index];
+    CBCharacteristic *characteristic = [self.characteristics objectForKey:peripheral];
+    char* stuff[1];
+    stuff[0] = 0x00;
+    NSMutableData *data = [NSMutableData dataWithBytes:stuff length:1];
+    [data appendData:[name dataUsingEncoding:NSUTF8StringEncoding]];
+    [peripheral writeValue:data forCharacteristic:characteristic type:CBCharacteristicWriteWithResponse];
+
+}
+
 
 /** We've connected to the peripheral, now we need to discover the services and characteristics to find the 'transfer' characteristic.
  */
@@ -224,6 +243,7 @@
         [self.centralManager connectPeripheral:peripheral options:nil];
         if (![self.peripheral1 isEnabled]) {
             self.peripheral1.enabled = YES;
+            self.peripheral2.enabled = YES;
         } else if (![self.peripheral2 isEnabled]) {
             self.peripheral2.enabled = YES;
         } else if (![self.peripheral3 isEnabled]) {
@@ -283,6 +303,8 @@
         // And check if it's the right one
         if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:TRANSFER_CHARACTERISTIC_UUID]]) {
             [self.characteristics setObject:characteristic forKey:peripheral];
+            NSUInteger index = [self.peripherals indexOfObject:peripheral];
+            [self namePeripheral:index withName:[NSString stringWithFormat:@"Speaker %d", (int)index]];
      
             // If it is, subscribe to it
 //            [peripheral setNotifyValue:YES forCharacteristic:characteristic];

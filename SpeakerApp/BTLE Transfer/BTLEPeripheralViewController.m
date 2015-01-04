@@ -53,7 +53,7 @@
 #import "BTLEPeripheralViewController.h"
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "TransferService.h"
-
+#import "OXAudioPlayer.h"
 
 @interface BTLEPeripheralViewController () <CBPeripheralManagerDelegate, UITextViewDelegate>
 @property (strong, nonatomic) IBOutlet UITextView       *textView;
@@ -62,11 +62,14 @@
 @property (strong, nonatomic) CBMutableCharacteristic   *transferCharacteristic;
 @property (strong, nonatomic) NSData                    *dataToSend;
 @property (nonatomic, readwrite) NSInteger              sendDataIndex;
+@property (strong, nonatomic) NSMutableDictionary       *soundPlayers;
 @end
 
 
 
-#define NOTIFY_MTU      20
+#define NOTIFY_MTU          20
+#define COMMAND_NODE_NAME   0x00
+#define COMMAND_PLAY_SOUND  0x01
 
 
 
@@ -131,8 +134,17 @@
     
     // And add it to the peripheral manager
     [self.peripheralManager addService:transferService];
+
+    [self setupSounds];
 }
 
+- (void)setupSounds {
+    self.soundPlayers = [[NSMutableDictionary alloc] init];
+    OXAudioPlayer *player1 = [[OXAudioPlayer alloc] initWithFilename:@"Dizzyollie.mp3"];
+    [self.soundPlayers setObject:player1 forKey:[NSNumber numberWithInt:0]];
+    OXAudioPlayer *player2 = [[OXAudioPlayer alloc] initWithFilename:@"Firmware FlagGrab.mp3"];
+    [self.soundPlayers setObject:player2 forKey:[NSNumber numberWithInt:1]];
+}
 
 /** Catch when someone subscribes to our characteristic, then start sending them data
  */
@@ -153,11 +165,34 @@
 -(void) peripheralManager:(CBPeripheralManager *)peripheral didReceiveWriteRequests:(NSArray *)requests{
     for(CBATTRequest* request in requests){
         // todo - check characteristic UUID
-        NSString* newStr = [NSString stringWithUTF8String:[request.value bytes]];
-        NSLog(@"Received: %@", newStr);
-        [self.connectedLabel setText:newStr];
+        if (request.value) {
+            [self processCommand:request.value];
+        }
         [peripheral respondToRequest:request withResult:CBATTErrorSuccess];
     }
+}
+
+- (void)processCommand:(NSData *)data {
+    char* commandBytes = [data bytes];
+    char command = commandBytes[0];
+    NSUInteger length = [data length];
+    NSData *body = [data subdataWithRange:NSMakeRange(1, length - 1)];
+
+    if (command == COMMAND_NODE_NAME) {
+        NSString* newStr = [NSString stringWithFormat:@"Connected as %@", [NSString stringWithUTF8String:[body bytes]]];
+//        NSLog(@"Received: %@", newStr);
+        [self.connectedLabel setText:newStr];
+    } else if (command == COMMAND_PLAY_SOUND) {
+//        int value = CFSwapInt32BigToHost(*(int*)([body bytes]));
+        NSString *number = [NSString stringWithUTF8String:[body bytes]];
+        NSLog(@"Told to play sound %X", [number intValue]);
+        [self playSound:[number intValue]];
+    }
+}
+
+- (void)playSound:(NSUInteger)soundId {
+    OXAudioPlayer *player = [self.soundPlayers objectForKey:[NSNumber numberWithInt:(int)soundId]];
+    [player play];
 }
 
 /** Recognise when the central unsubscribes
