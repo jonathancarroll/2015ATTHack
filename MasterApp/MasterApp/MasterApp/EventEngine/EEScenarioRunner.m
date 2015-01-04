@@ -35,7 +35,7 @@
 - (void)startNextEvent {
     eventIndex++;
     if (eventIndex < [self.scenario.events count]) {
-        EEBase *event = [self.scenario.events objectAtIndex:0];
+        EEBase *event = [self.scenario.events objectAtIndex:eventIndex];
         event.soundDelegate = self;
         event.eventDelegate = self;
         [event setup];
@@ -62,6 +62,7 @@
 
 - (void)playSound:(NSUInteger)soundId onSpeaker:(NSUInteger)speakerId {
     if (self.soundDelegate) {
+        NSLog(@"Running sending sound");
         [self.soundDelegate playSound:soundId onSpeaker:speakerId];
     }
 }

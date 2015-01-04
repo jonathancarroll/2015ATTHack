@@ -18,6 +18,7 @@
 - (void)start {
 
     if (self.soundDelegate && self.eventStartSound) {
+        NSLog(@"event sending sound");
         [self.soundDelegate playSound:self.eventStartSound.soundId onSpeaker:self.eventStartSound.desiredSpeaker];
     }
 }

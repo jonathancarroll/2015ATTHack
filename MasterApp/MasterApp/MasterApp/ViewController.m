@@ -102,15 +102,15 @@
 
 - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI
 {
-    if (RSSI.integerValue > -15) {
-        return;
-    }
+//    if (RSSI.integerValue > -15) {
+//        return;
+//    }
+//
+//    if (RSSI.integerValue < -35) {
+//        return;
+//    }
 
-    if (RSSI.integerValue < -35) {
-        return;
-    }
-
-    NSLog(@"Discovered %@ at %@", peripheral.name, RSSI);
+//    NSLog(@"Discovered %@ at %@", peripheral.name, RSSI);
 
     if (![self.peripherals containsObject:peripheral] && ![self.peripheralsConnecting containsObject:peripheral]) {
         NSLog(@"Attempting to connect to peripheral %@", peripheral);
@@ -120,16 +120,31 @@
 }
 
 - (void)playSound:(NSUInteger)soundId onSpeaker:(NSUInteger)speakerId {
+    NSLog(@"Going to play a sound");
+    if (speakerId >= [self.peripherals count]) {
+        NSLog(@"cannot play sound. index out of range");
+        return;
+    }
     if ([self.peripherals objectAtIndex:speakerId]) {
         CBPeripheral *peripheral = [self.peripherals objectAtIndex:speakerId];
         CBCharacteristic *characteristic = [self.characteristics objectForKey:peripheral];
+        if (!characteristic) {
+            NSArray *array = @[[NSNumber numberWithInteger:soundId], [NSNumber numberWithInteger:speakerId]];
+            [self performSelector:@selector(soundRetry:) withObject:array afterDelay:0.5];
+            return;
+        }
         char* stuff[1];
         stuff[0] = 0x01;
         NSString *name = [NSString stringWithFormat:@"%d", (int)soundId];
         NSMutableData *data = [NSMutableData dataWithBytes:stuff length:1];
         [data appendData:[name dataUsingEncoding:NSUTF8StringEncoding]];
+        NSLog(@"telling speaker %d to play sound %d", (int)speakerId, (int)soundId);
         [peripheral writeValue:data forCharacteristic:characteristic type:CBCharacteristicWriteWithResponse];
     }
+}
+
+- (void)soundRetry:(NSArray *)params {
+    [self playSound:[[params objectAtIndex:0] integerValue] onSpeaker:[[params objectAtIndex:1] integerValue]];
 }
 
 - (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error
@@ -177,6 +192,7 @@
                                      CBConnectPeripheralOptionNotifyOnNotificationKey: @YES};
 
     NSLog(@"Trying to reconnect...");
+    [self.peripheralsConnecting addObject:peripheral];
     [self.centralManager connectPeripheral:peripheral options:connectOptions];
 }
 
