@@ -7,6 +7,7 @@
 //
 
 #import "EEBase.h"
+#import "EESound.h"
 
 @implementation EEBase
 
@@ -15,21 +16,26 @@
 }
 
 - (void)start {
-    // nothing
+
+    if (self.soundDelegate && self.eventStartSound) {
+        [self.soundDelegate playSound:self.eventStartSound.soundId onSpeaker:self.eventStartSound.desiredSpeaker];
+    }
 }
 
 - (void)succeed {
 
-    // play success sound
-    if (self.delegate) {
-        [self.delegate eventFinished:YES];
+    if (self.soundDelegate && self.eventSuccessSound) {
+        [self.soundDelegate playSound:self.eventSuccessSound.soundId onSpeaker:self.eventSuccessSound.desiredSpeaker];
+    }
+    if (self.eventDelegate) {
+        [self.eventDelegate eventFinished:YES];
     }
 }
 
 - (void)fail {
-
-    if (self.delegate) {
-        [self.delegate eventFinished:NO];
+    
+    if (self.eventDelegate) {
+        [self.eventDelegate eventFinished:NO];
     }
 }
 

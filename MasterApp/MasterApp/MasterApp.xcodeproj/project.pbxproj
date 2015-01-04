@@ -35,6 +35,10 @@
 		CA1E08E71A59383F0038D383 /* EEDeviceStateChangeEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1E08E61A59383F0038D383 /* EEDeviceStateChangeEvent.m */; };
 		CA1E08EA1A593B7E0038D383 /* EEShootTargetEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1E08E91A593B7E0038D383 /* EEShootTargetEvent.m */; };
 		CA1E08ED1A593D3D0038D383 /* EEControlEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1E08EC1A593D3D0038D383 /* EEControlEvent.m */; };
+		CA1E08F01A5941D10038D383 /* RobotEventScenario.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1E08EF1A5941D10038D383 /* RobotEventScenario.m */; };
+		CA1E08F31A59446D0038D383 /* EEPlaySoundEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1E08F21A59446D0038D383 /* EEPlaySoundEvent.m */; };
+		CA1E08F61A5947910038D383 /* EEScenarioRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1E08F51A5947910038D383 /* EEScenarioRunner.m */; };
+		CA1E08F91A5947EB0038D383 /* EEScenario.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1E08F81A5947EB0038D383 /* EEScenario.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +106,14 @@
 		CA1E08E91A593B7E0038D383 /* EEShootTargetEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEShootTargetEvent.m; path = EventEngine/EEShootTargetEvent.m; sourceTree = "<group>"; };
 		CA1E08EB1A593D3D0038D383 /* EEControlEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEControlEvent.h; path = EventEngine/EEControlEvent.h; sourceTree = "<group>"; };
 		CA1E08EC1A593D3D0038D383 /* EEControlEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEControlEvent.m; path = EventEngine/EEControlEvent.m; sourceTree = "<group>"; };
+		CA1E08EE1A5941D10038D383 /* RobotEventScenario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobotEventScenario.h; sourceTree = "<group>"; };
+		CA1E08EF1A5941D10038D383 /* RobotEventScenario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobotEventScenario.m; sourceTree = "<group>"; };
+		CA1E08F11A59446D0038D383 /* EEPlaySoundEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEPlaySoundEvent.h; path = EventEngine/EEPlaySoundEvent.h; sourceTree = "<group>"; };
+		CA1E08F21A59446D0038D383 /* EEPlaySoundEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEPlaySoundEvent.m; path = EventEngine/EEPlaySoundEvent.m; sourceTree = "<group>"; };
+		CA1E08F41A5947910038D383 /* EEScenarioRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEScenarioRunner.h; path = EventEngine/EEScenarioRunner.h; sourceTree = "<group>"; };
+		CA1E08F51A5947910038D383 /* EEScenarioRunner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEScenarioRunner.m; path = EventEngine/EEScenarioRunner.m; sourceTree = "<group>"; };
+		CA1E08F71A5947EB0038D383 /* EEScenario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEScenario.h; path = EventEngine/EEScenario.h; sourceTree = "<group>"; };
+		CA1E08F81A5947EB0038D383 /* EEScenario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEScenario.m; path = EventEngine/EEScenario.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +172,8 @@
 				81B06EFB1A58FC4200909EB9 /* DLDevice.m */,
 				81B06F1D1A59164700909EB9 /* M2XConnector.h */,
 				81B06F1E1A59164700909EB9 /* M2XConnector.m */,
+				CA1E08EE1A5941D10038D383 /* RobotEventScenario.h */,
+				CA1E08EF1A5941D10038D383 /* RobotEventScenario.m */,
 			);
 			path = MasterApp;
 			sourceTree = "<group>";
@@ -234,6 +248,12 @@
 				CA1E08E91A593B7E0038D383 /* EEShootTargetEvent.m */,
 				CA1E08EB1A593D3D0038D383 /* EEControlEvent.h */,
 				CA1E08EC1A593D3D0038D383 /* EEControlEvent.m */,
+				CA1E08F11A59446D0038D383 /* EEPlaySoundEvent.h */,
+				CA1E08F21A59446D0038D383 /* EEPlaySoundEvent.m */,
+				CA1E08F41A5947910038D383 /* EEScenarioRunner.h */,
+				CA1E08F51A5947910038D383 /* EEScenarioRunner.m */,
+				CA1E08F71A5947EB0038D383 /* EEScenario.h */,
+				CA1E08F81A5947EB0038D383 /* EEScenario.m */,
 			);
 			name = EventEngine;
 			sourceTree = "<group>";
@@ -345,13 +365,17 @@
 				CA1E08E41A5935A60038D383 /* EESound.m in Sources */,
 				81B06EDA1A58B46E00909EB9 /* ViewController.m in Sources */,
 				81B06ED71A58B46E00909EB9 /* AppDelegate.m in Sources */,
+				CA1E08F91A5947EB0038D383 /* EEScenario.m in Sources */,
 				81B06EF91A58B53400909EB9 /* DigitalLifeConnector.m in Sources */,
+				CA1E08F01A5941D10038D383 /* RobotEventScenario.m in Sources */,
 				81B06EFC1A58FC4200909EB9 /* DLDevice.m in Sources */,
+				CA1E08F31A59446D0038D383 /* EEPlaySoundEvent.m in Sources */,
 				81B06F181A59143700909EB9 /* M2XResource.m in Sources */,
 				CA1E08EA1A593B7E0038D383 /* EEShootTargetEvent.m in Sources */,
 				81B06F1B1A59143700909EB9 /* M2XTrigger.m in Sources */,
 				81B06F191A59143700909EB9 /* M2XResponse.m in Sources */,
 				CA1E08E01A59331B0038D383 /* EEBase.m in Sources */,
+				CA1E08F61A5947910038D383 /* EEScenarioRunner.m in Sources */,
 				81B06F171A59143700909EB9 /* M2XKey.m in Sources */,
 				81B06F151A59143700909EB9 /* M2XDevice.m in Sources */,
 				81B06F161A59143700909EB9 /* M2XDistribution.m in Sources */,

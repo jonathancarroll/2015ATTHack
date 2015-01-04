@@ -9,13 +9,17 @@
 #import "ViewController.h"
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "TransferService.h"
+#import "EEScenarioRunner.h"
+#import "RobotEventScenario.h"
+#import "EEBase.h"
 
-@interface ViewController () <CBCentralManagerDelegate, CBPeripheralDelegate>
+@interface ViewController () <CBCentralManagerDelegate, CBPeripheralDelegate, EESoundDelegate, EEScenarioDelegate>
 
 @property (strong, nonatomic) CBCentralManager      *centralManager;
 @property (strong, nonatomic) NSMutableArray        *peripherals;
 @property (strong, nonatomic) NSMutableArray        *peripheralsConnecting;
 @property (strong, nonatomic) NSMutableDictionary   *characteristics;
+@property (strong, nonatomic) EEScenarioRunner      *scenarioRunner;
 
 @end
 
@@ -41,6 +45,23 @@
     NSLog(@"Scanning stopped");
 
     [super viewWillDisappear:animated];
+}
+
+#pragma mark - Scenario Methods
+
+- (void)loadScenario {
+    EEScenario *scenario = [RobotEventScenario buildScenario];
+    self.scenarioRunner = [[EEScenarioRunner alloc] initWithScenario:scenario];
+    self.scenarioRunner.soundDelegate = self;
+    self.scenarioRunner.scenarioDelegate = self;
+}
+
+- (void)startScenario {
+    [self.scenarioRunner startScenario];
+}
+
+- (void)scenarioEnded {
+    // TODO: do something
 }
 
 #pragma mark - Central Methods
@@ -91,13 +112,13 @@
     }
 }
 
-- (void)playSound:(int)sound onSpeaker:(int)speaker {
-    if ([self.peripherals objectAtIndex:speaker]) {
-        CBPeripheral *peripheral = [self.peripherals objectAtIndex:0];
+- (void)playSound:(NSUInteger)soundId onSpeaker:(NSUInteger)speakerId {
+    if ([self.peripherals objectAtIndex:speakerId]) {
+        CBPeripheral *peripheral = [self.peripherals objectAtIndex:speakerId];
         CBCharacteristic *characteristic = [self.characteristics objectForKey:peripheral];
         char* stuff[1];
         stuff[0] = 0x01;
-        NSString *name = [NSString stringWithFormat:@"%d", sound];
+        NSString *name = [NSString stringWithFormat:@"%d", (int)soundId];
         NSMutableData *data = [NSMutableData dataWithBytes:stuff length:1];
         [data appendData:[name dataUsingEncoding:NSUTF8StringEncoding]];
         [peripheral writeValue:data forCharacteristic:characteristic type:CBCharacteristicWriteWithResponse];
