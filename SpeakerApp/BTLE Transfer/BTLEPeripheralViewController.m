@@ -141,10 +141,32 @@
 
 - (void)setupSounds {
     self.soundPlayers = [[NSMutableDictionary alloc] init];
-    OXAudioPlayer *player1 = [[OXAudioPlayer alloc] initWithFilename:@"Dizzyollie.mp3"];
-    [self.soundPlayers setObject:player1 forKey:[NSNumber numberWithInt:0]];
-    OXAudioPlayer *player2 = [[OXAudioPlayer alloc] initWithFilename:@"Firmware FlagGrab.mp3"];
-    [self.soundPlayers setObject:player2 forKey:[NSNumber numberWithInt:1]];
+    OXAudioPlayer *player0 = [[OXAudioPlayer alloc] initWithFilename:@"0-invading.wav"];
+    [self.soundPlayers setObject:player0 forKey:[NSNumber numberWithInt:0]];
+    OXAudioPlayer *player1 = [[OXAudioPlayer alloc] initWithFilename:@"1-lockdoor.wav"];
+    [self.soundPlayers setObject:player1 forKey:[NSNumber numberWithInt:1]];
+    OXAudioPlayer *player2 = [[OXAudioPlayer alloc] initWithFilename:@"2-goodjob.wav"];
+    [self.soundPlayers setObject:player2 forKey:[NSNumber numberWithInt:2]];
+    OXAudioPlayer *player3 = [[OXAudioPlayer alloc] initWithFilename:@"3-listen.wav"];
+    [self.soundPlayers setObject:player3 forKey:[NSNumber numberWithInt:3]];
+    OXAudioPlayer *player4 = [[OXAudioPlayer alloc] initWithFilename:@"4-toxicgas.wav"];
+    [self.soundPlayers setObject:player4 forKey:[NSNumber numberWithInt:4]];
+    OXAudioPlayer *player5 = [[OXAudioPlayer alloc] initWithFilename:@"5-goodgas.wav"];
+    [self.soundPlayers setObject:player5 forKey:[NSNumber numberWithInt:5]];
+    OXAudioPlayer *player6 = [[OXAudioPlayer alloc] initWithFilename:@"6-shootit1.wav"];
+    [self.soundPlayers setObject:player6 forKey:[NSNumber numberWithInt:6]];
+    OXAudioPlayer *player7 = [[OXAudioPlayer alloc] initWithFilename:@"7-shutwindow.wav"];
+    [self.soundPlayers setObject:player7 forKey:[NSNumber numberWithInt:7]];
+    OXAudioPlayer *player8 = [[OXAudioPlayer alloc] initWithFilename:@"8-keepthemout.wav"];
+    [self.soundPlayers setObject:player8 forKey:[NSNumber numberWithInt:8]];
+    OXAudioPlayer *player9 = [[OXAudioPlayer alloc] initWithFilename:@"9-chased.wav"];
+    [self.soundPlayers setObject:player9 forKey:[NSNumber numberWithInt:9]];
+    OXAudioPlayer *player10 = [[OXAudioPlayer alloc] initWithFilename:@"10-safe.wav"];
+    [self.soundPlayers setObject:player10 forKey:[NSNumber numberWithInt:10]];
+    OXAudioPlayer *player11 = [[OXAudioPlayer alloc] initWithFilename:@"11-funny.wav"];
+    [self.soundPlayers setObject:player11 forKey:[NSNumber numberWithInt:11]];
+    OXAudioPlayer *player12 = [[OXAudioPlayer alloc] initWithFilename:@"Firmware FlagGrab.mp3"];
+    [self.soundPlayers setObject:player12 forKey:[NSNumber numberWithInt:12]];
 }
 
 /** Catch when someone subscribes to our characteristic, then start sending them data
