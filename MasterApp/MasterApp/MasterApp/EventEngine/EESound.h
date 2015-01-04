@@ -16,6 +16,8 @@
 @property (nonatomic) NSUInteger desiredSpeaker;
 @property (nonatomic) NSUInteger soundId;
 
+- (id)initWithSoundId:(NSUInteger)sid andSpeaker:(NSUInteger)speaker;
+
 @end
 
 #endif
