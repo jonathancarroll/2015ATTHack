@@ -166,6 +166,10 @@
     [self.soundPlayers setObject:player16 forKey:[NSNumber numberWithInt:16]];
     OXAudioPlayer *player17 = [[OXAudioPlayer alloc] initWithFilename:@"Robot Turning.wav"];
     [self.soundPlayers setObject:player17 forKey:[NSNumber numberWithInt:17]];
+    OXAudioPlayer *player18 = [[OXAudioPlayer alloc] initWithFilename:@"shoot-the-camera.wav"];
+    [self.soundPlayers setObject:player18 forKey:[NSNumber numberWithInt:18]];
+    OXAudioPlayer *player19 = [[OXAudioPlayer alloc] initWithFilename:@"throw-it-in-water.wav"];
+    [self.soundPlayers setObject:player19 forKey:[NSNumber numberWithInt:19]];
 
 }
 

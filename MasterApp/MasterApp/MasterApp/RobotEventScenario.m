@@ -85,7 +85,7 @@
     shootEvent1.eventStartSound = [[EESound alloc] initWithSoundId:14 andSpeaker:2];
 //     Wait for target to be hit.
     shootEvent1.targetId = @"a7bee74cd9a58ceeec3fcc38fa65193c";
-    shootEvent1.eventSuccessSound = [[EESound alloc] initWithSoundId:15 andSpeaker:1];
+    shootEvent1.eventSuccessSound = [[EESound alloc] initWithSoundId:15 andSpeaker:2];
     [events addObject:shootEvent1];
 
 //     “Great. Now go shut that window so no more get in.”
@@ -96,17 +96,29 @@
     deviceState3.attributeName = @"contact-state";
     deviceState3.desiredAttributeState = @"closed";
 //     Noise comes from left side speaker.
-    deviceState3.eventSuccessSound = [[EESound alloc] initWithSoundId:14 andSpeaker:0];
+    deviceState3.eventSuccessSound = [[EESound alloc] initWithSoundId:2 andSpeaker:1];
     deviceState3.successDelay = 2.0;
     [events addObject:deviceState3];
 
-//     “Hopefully that keeps them out. Lookout behind you!”
+//     shoot the camera
     EEShootTargetEvent *shootEvent2 = [[EEShootTargetEvent alloc] init];
-    shootEvent2.eventStartSound = [[EESound alloc] initWithSoundId:8 andSpeaker:1];
+    shootEvent2.eventStartSound = [[EESound alloc] initWithSoundId:18 andSpeaker:1];
 //     Wait for target to be hit.
     shootEvent2.targetId = @"0b9b634bd7314a76292c8ab5b9495115";
     shootEvent2.eventSuccessSound = [[EESound alloc] initWithSoundId:15 andSpeaker:1];
     [events addObject:shootEvent2];
+
+    //     “throw in the water.”
+    EEDeviceStateChangeEvent *deviceState4 = [[EEDeviceStateChangeEvent alloc] init];
+    deviceState4.eventStartSound = [[EESound alloc] initWithSoundId:19 andSpeaker:1];
+    //     Wait for water sensor.
+    deviceState4.deviceType = @"water-sensor";
+    deviceState4.attributeName = @"water-state";
+    deviceState4.desiredAttributeState = @"wet";
+    //     Noise comes from left side speaker.
+    deviceState4.eventSuccessSound = [[EESound alloc] initWithSoundId:15 andSpeaker:0];
+    deviceState4.successDelay = 3.0;
+    [events addObject:deviceState4];
 
 //     “Excellent work. It looks like they are retreating.”
     EEPlaySoundEvent *soundEvent4 = [[EEPlaySoundEvent alloc] init];
