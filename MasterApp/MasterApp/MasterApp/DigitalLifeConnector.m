@@ -155,7 +155,7 @@ static DigitalLifeConnector *sharedConnector = nil;
                     
                     [[NSNotificationCenter defaultCenter] postNotificationName:DigitalLifeConntectorDevicesUpdatedNotification object:self];
                     
-                    //[self performSelector:@selector(authenticate) withObject:nil afterDelay:1.0];
+                    [self performSelector:@selector(authenticate) withObject:nil afterDelay:1.0];
                     
                 });
             });

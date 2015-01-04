@@ -13,7 +13,9 @@
 
 @interface M2XConnector : NSObject {
     M2XClient *client;
+    M2XClient *client2;
     int lastTarget1Value;
+    int lastTarget2Value;
 }
 
 @end
