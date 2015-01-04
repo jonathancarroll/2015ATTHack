@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,71 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HiRes.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Zlw-O3-K6X">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Gamified Home" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v42-8d-73M" userLabel="Gamified Home">
+                                <rect key="frame" x="0.0" y="484" width="282" height="46"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Episode 1: Attack of the Robots" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dPz-1E-2Is">
+                                <rect key="frame" x="0.0" y="535" width="341" height="27"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ad8-fO-aNX">
+                                <rect key="frame" x="370" y="516" width="203" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Zlw-O3-K6X" secondAttribute="bottom" id="0f2-Ae-vfs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zlw-O3-K6X" secondAttribute="trailing" constant="-16" id="16P-D6-kNk"/>
+                            <constraint firstItem="Zlw-O3-K6X" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="2n8-Bi-P75"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ad8-fO-aNX" secondAttribute="bottom" constant="54" id="D9g-Oh-QUA"/>
+                            <constraint firstItem="Zlw-O3-K6X" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="DnK-Xf-B8M"/>
+                            <constraint firstItem="Zlw-O3-K6X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DyF-HB-4dA"/>
+                            <constraint firstItem="v42-8d-73M" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="OMD-v3-N9v"/>
+                            <constraint firstItem="dPz-1E-2Is" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ZfR-zH-GFd"/>
+                            <constraint firstItem="dPz-1E-2Is" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="ant-rC-Jth"/>
+                            <constraint firstItem="v42-8d-73M" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="d7P-PX-gqm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ad8-fO-aNX" secondAttribute="trailing" constant="11" id="dkO-49-Qln"/>
+                            <constraint firstItem="Ad8-fO-aNX" firstAttribute="leading" secondItem="dPz-1E-2Is" secondAttribute="trailing" constant="29" id="eB3-Nl-aIH"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dPz-1E-2Is" secondAttribute="bottom" constant="38" id="jfp-IK-pWl"/>
+                            <constraint firstItem="Zlw-O3-K6X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="lpm-F2-gFu"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="v42-8d-73M" secondAttribute="bottom" constant="70" id="r3H-VV-bCm"/>
+                            <constraint firstItem="Zlw-O3-K6X" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rRm-EN-rLY"/>
+                            <constraint firstItem="v42-8d-73M" firstAttribute="leading" secondItem="Zlw-O3-K6X" secondAttribute="leading" id="s0Q-lB-Wnw"/>
+                            <constraint firstItem="v42-8d-73M" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yNX-TS-Q2t"/>
+                            <constraint firstItem="v42-8d-73M" firstAttribute="trailing" secondItem="dPz-1E-2Is" secondAttribute="trailing" id="zJf-VA-Nai"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="d7P-PX-gqm"/>
+                                <exclude reference="s0Q-lB-Wnw"/>
+                                <exclude reference="yNX-TS-Q2t"/>
+                                <exclude reference="zJf-VA-Nai"/>
+                                <exclude reference="ZfR-zH-GFd"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="HiRes.jpg" width="3000" height="2547"/>
+    </resources>
 </document>
