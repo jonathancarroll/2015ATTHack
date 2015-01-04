@@ -27,6 +27,11 @@
 		81B06F1B1A59143700909EB9 /* M2XTrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B06F101A59143700909EB9 /* M2XTrigger.m */; };
 		81B06F1C1A59143700909EB9 /* NSDate+M2X.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B06F121A59143700909EB9 /* NSDate+M2X.m */; };
 		81B06F1F1A59164700909EB9 /* M2XConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B06F1E1A59164700909EB9 /* M2XConnector.m */; };
+		CA1E08E01A59331B0038D383 /* EEBase.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1E08DF1A59331B0038D383 /* EEBase.m */; };
+		CA1E08E41A5935A60038D383 /* EESound.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1E08E31A5935A60038D383 /* EESound.m */; };
+		CA1E08E71A59383F0038D383 /* EEDeviceStateChangeEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1E08E61A59383F0038D383 /* EEDeviceStateChangeEvent.m */; };
+		CA1E08EA1A593B7E0038D383 /* EEShootTargetEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1E08E91A593B7E0038D383 /* EEShootTargetEvent.m */; };
+		CA1E08ED1A593D3D0038D383 /* EEControlEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1E08EC1A593D3D0038D383 /* EEControlEvent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +86,16 @@
 		81B06F1D1A59164700909EB9 /* M2XConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2XConnector.h; sourceTree = "<group>"; };
 		81B06F1E1A59164700909EB9 /* M2XConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2XConnector.m; sourceTree = "<group>"; };
 		CA1E08DD1A5911610038D383 /* TransferService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransferService.h; sourceTree = "<group>"; };
+		CA1E08DF1A59331B0038D383 /* EEBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEBase.m; path = EventEngine/EEBase.m; sourceTree = "<group>"; };
+		CA1E08E11A5933380038D383 /* EEBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EEBase.h; path = EventEngine/EEBase.h; sourceTree = "<group>"; };
+		CA1E08E21A5935880038D383 /* EESound.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EESound.h; path = EventEngine/EESound.h; sourceTree = "<group>"; };
+		CA1E08E31A5935A60038D383 /* EESound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EESound.m; path = EventEngine/EESound.m; sourceTree = "<group>"; };
+		CA1E08E51A59383F0038D383 /* EEDeviceStateChangeEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEDeviceStateChangeEvent.h; path = EventEngine/EEDeviceStateChangeEvent.h; sourceTree = "<group>"; };
+		CA1E08E61A59383F0038D383 /* EEDeviceStateChangeEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEDeviceStateChangeEvent.m; path = EventEngine/EEDeviceStateChangeEvent.m; sourceTree = "<group>"; };
+		CA1E08E81A593B7E0038D383 /* EEShootTargetEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEShootTargetEvent.h; path = EventEngine/EEShootTargetEvent.h; sourceTree = "<group>"; };
+		CA1E08E91A593B7E0038D383 /* EEShootTargetEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEShootTargetEvent.m; path = EventEngine/EEShootTargetEvent.m; sourceTree = "<group>"; };
+		CA1E08EB1A593D3D0038D383 /* EEControlEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEControlEvent.h; path = EventEngine/EEControlEvent.h; sourceTree = "<group>"; };
+		CA1E08EC1A593D3D0038D383 /* EEControlEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEControlEvent.m; path = EventEngine/EEControlEvent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +137,7 @@
 		81B06ED01A58B46E00909EB9 /* MasterApp */ = {
 			isa = PBXGroup;
 			children = (
+				CA1E08DE1A5932D10038D383 /* EventEngine */,
 				81B06EFD1A59142400909EB9 /* M2X */,
 				CA1E08DD1A5911610038D383 /* TransferService.h */,
 				81B06ED51A58B46E00909EB9 /* AppDelegate.h */,
@@ -194,6 +210,23 @@
 				81B06F121A59143700909EB9 /* NSDate+M2X.m */,
 			);
 			name = M2X;
+			sourceTree = "<group>";
+		};
+		CA1E08DE1A5932D10038D383 /* EventEngine */ = {
+			isa = PBXGroup;
+			children = (
+				CA1E08DF1A59331B0038D383 /* EEBase.m */,
+				CA1E08E11A5933380038D383 /* EEBase.h */,
+				CA1E08E21A5935880038D383 /* EESound.h */,
+				CA1E08E31A5935A60038D383 /* EESound.m */,
+				CA1E08E51A59383F0038D383 /* EEDeviceStateChangeEvent.h */,
+				CA1E08E61A59383F0038D383 /* EEDeviceStateChangeEvent.m */,
+				CA1E08E81A593B7E0038D383 /* EEShootTargetEvent.h */,
+				CA1E08E91A593B7E0038D383 /* EEShootTargetEvent.m */,
+				CA1E08EB1A593D3D0038D383 /* EEControlEvent.h */,
+				CA1E08EC1A593D3D0038D383 /* EEControlEvent.m */,
+			);
+			name = EventEngine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,21 +330,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				81B06F131A59143700909EB9 /* M2XClient.m in Sources */,
+				CA1E08E41A5935A60038D383 /* EESound.m in Sources */,
 				81B06EDA1A58B46E00909EB9 /* ViewController.m in Sources */,
 				81B06ED71A58B46E00909EB9 /* AppDelegate.m in Sources */,
 				81B06EF91A58B53400909EB9 /* DigitalLifeConnector.m in Sources */,
 				81B06EFC1A58FC4200909EB9 /* DLDevice.m in Sources */,
 				81B06F181A59143700909EB9 /* M2XResource.m in Sources */,
+				CA1E08EA1A593B7E0038D383 /* EEShootTargetEvent.m in Sources */,
 				81B06F1B1A59143700909EB9 /* M2XTrigger.m in Sources */,
 				81B06F191A59143700909EB9 /* M2XResponse.m in Sources */,
+				CA1E08E01A59331B0038D383 /* EEBase.m in Sources */,
 				81B06F171A59143700909EB9 /* M2XKey.m in Sources */,
 				81B06F151A59143700909EB9 /* M2XDevice.m in Sources */,
 				81B06F161A59143700909EB9 /* M2XDistribution.m in Sources */,
 				81B06F1F1A59164700909EB9 /* M2XConnector.m in Sources */,
 				81B06F1C1A59143700909EB9 /* NSDate+M2X.m in Sources */,
 				81B06ED41A58B46E00909EB9 /* main.m in Sources */,
+				CA1E08E71A59383F0038D383 /* EEDeviceStateChangeEvent.m in Sources */,
 				81B06F1A1A59143700909EB9 /* M2XStream.m in Sources */,
 				81B06F141A59143700909EB9 /* M2XClient+HTTP.m in Sources */,
+				CA1E08ED1A593D3D0038D383 /* EEControlEvent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
