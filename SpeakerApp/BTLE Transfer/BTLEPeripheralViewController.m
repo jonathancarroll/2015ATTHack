@@ -157,6 +157,10 @@
     [self.soundPlayers setObject:player12 forKey:[NSNumber numberWithInt:12]];
     OXAudioPlayer *player13 = [[OXAudioPlayer alloc] initWithFilename:@"ElectricalArc.wav"];
     [self.soundPlayers setObject:player13 forKey:[NSNumber numberWithInt:13]];
+    OXAudioPlayer *player14 = [[OXAudioPlayer alloc] initWithFilename:@"14-robotwalking.wav"];
+    [self.soundPlayers setObject:player14 forKey:[NSNumber numberWithInt:14]];
+    OXAudioPlayer *player15 = [[OXAudioPlayer alloc] initWithFilename:@"15-robotdeath.wav"];
+    [self.soundPlayers setObject:player15 forKey:[NSNumber numberWithInt:15]];
 
 }
 
