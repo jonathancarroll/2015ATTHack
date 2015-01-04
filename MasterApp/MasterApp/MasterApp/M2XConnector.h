@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "M2X.h"
 
+#define M2XConnectorTargetHitNotification @"M2XTargetHitNotification"
+
 @interface M2XConnector : NSObject {
     M2XClient *client;
     int lastTarget1Value;
