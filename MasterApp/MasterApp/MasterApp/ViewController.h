@@ -13,6 +13,7 @@
 @interface ViewController : UIViewController {
     DigitalLifeConnector *dl;
     M2XConnector *m2x;
+    IBOutlet UIButton *startButton;
     
 }
 

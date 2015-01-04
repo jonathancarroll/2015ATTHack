@@ -222,6 +222,10 @@
             [self.characteristics setObject:characteristic forKey:peripheral];
             NSUInteger index = [self.peripherals indexOfObject:peripheral];
             [self namePeripheral:index withName:[NSString stringWithFormat:@"Speaker %d", (int)index]];
+            
+            if([self.peripherals count] > 2) {
+                startButton.enabled = YES;
+            }
         }
     }
 }
