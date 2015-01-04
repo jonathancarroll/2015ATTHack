@@ -46,6 +46,7 @@
 		81B06EF81A58B53400909EB9 /* DigitalLifeConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DigitalLifeConnector.m; sourceTree = "<group>"; };
 		81B06EFA1A58FC4200909EB9 /* DLDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLDevice.h; sourceTree = "<group>"; };
 		81B06EFB1A58FC4200909EB9 /* DLDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLDevice.m; sourceTree = "<group>"; };
+		CA1E08DD1A5911610038D383 /* TransferService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransferService.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +88,7 @@
 		81B06ED01A58B46E00909EB9 /* MasterApp */ = {
 			isa = PBXGroup;
 			children = (
+				CA1E08DD1A5911610038D383 /* TransferService.h */,
 				81B06ED51A58B46E00909EB9 /* AppDelegate.h */,
 				81B06ED61A58B46E00909EB9 /* AppDelegate.m */,
 				81B06ED81A58B46E00909EB9 /* ViewController.h */,
@@ -426,6 +428,7 @@
 				81B06EF31A58B46E00909EB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		81B06EF41A58B46E00909EB9 /* Build configuration list for PBXNativeTarget "MasterAppTests" */ = {
 			isa = XCConfigurationList;
@@ -434,6 +437,7 @@
 				81B06EF61A58B46E00909EB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
