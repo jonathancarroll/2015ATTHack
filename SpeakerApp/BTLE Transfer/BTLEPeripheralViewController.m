@@ -109,6 +109,7 @@
  */
 - (void)peripheralManagerDidUpdateState:(CBPeripheralManager *)peripheral
 {
+
     // Opt out from any other state
     if (peripheral.state != CBPeripheralManagerStatePoweredOn) {
         return;
