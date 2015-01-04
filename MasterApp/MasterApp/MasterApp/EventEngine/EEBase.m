@@ -38,14 +38,16 @@
 }
 
 - (void)finished:(BOOL)success {
+    if (self.soundDelegate) {
+        [self.soundDelegate fadeOut:self.eventSuccessSound.desiredSpeaker];
+    }
+    
     if (self.eventDelegate) {
         [self.eventDelegate eventFinished:YES];
         self.eventDelegate = nil;
     }
 
-    if (self.soundDelegate) {
-        [self.soundDelegate fadeOut:self.eventSuccessSound.desiredSpeaker];
-    }
+    
 }
 
 - (void)fail {

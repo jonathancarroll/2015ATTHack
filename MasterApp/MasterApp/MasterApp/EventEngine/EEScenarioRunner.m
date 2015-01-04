@@ -53,7 +53,7 @@
 
 - (void)eventFinished:(BOOL)success {
     if (success) {
-        [self startNextEvent];
+        [self performSelector:@selector(startNextEvent) withObject:nil afterDelay:0.3];
     } else {
         // TODO: do something different here
         [self endScenario];
@@ -64,6 +64,12 @@
     if (self.soundDelegate) {
         NSLog(@"Running sending sound");
         [self.soundDelegate playSound:soundId onSpeaker:speakerId];
+    }
+}
+
+- (void)fadeOut:(NSUInteger)speakerId {
+    if (self.soundDelegate) {
+        [self.soundDelegate fadeOut:speakerId];
     }
 }
 
