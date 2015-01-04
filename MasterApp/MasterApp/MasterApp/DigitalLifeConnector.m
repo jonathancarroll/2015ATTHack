@@ -142,7 +142,7 @@
                         NSLog(@"deviceGuid: %@  deviceType: %@", d.deviceGuid, d.deviceType);
                     }
                     
-                    [self performSelector:@selector(authenticate) withObject:nil afterDelay:1.0];
+                    //[self performSelector:@selector(authenticate) withObject:nil afterDelay:1.0];
                     
                 });
             });
