@@ -41,13 +41,13 @@
     deviceState1.desiredAttributeState = @"lock";
 //     “Good job!”
     deviceState1.eventSuccessSound = [[EESound alloc] initWithSoundId:2 andSpeaker:1];
-    deviceState1.successDelay = 3.0;
+    deviceState1.successDelay = 2.0;
     [events addObject:deviceState1];
 
 //     “Listen. Do you hear them?” (Distant robot sounds)
     EEPlaySoundEvent *soundEvent2 = [[EEPlaySoundEvent alloc] init];
     soundEvent2.eventStartSound = [[EESound alloc] initWithSoundId:3 andSpeaker:1];
-    soundEvent2.autoAdvanceDelay = 4.0;
+    soundEvent2.autoAdvanceDelay = 2.0;
     [events addObject:soundEvent2];
 
 //      robot sounds
@@ -59,7 +59,7 @@
     //     crash / gas grenade explosion
     EEPlaySoundEvent *soundEvent7 = [[EEPlaySoundEvent alloc] init];
     soundEvent7.eventStartSound = [[EESound alloc] initWithSoundId:16 andSpeaker:1];
-    soundEvent7.autoAdvanceDelay = 4.0;
+    soundEvent7.autoAdvanceDelay = 2.5;
     [events addObject:soundEvent7];
 
 //     “Oh no! They got a toxic gas grenade in somehow. Open a window to vent the gas.”
@@ -77,7 +77,7 @@
 //     “Watch out! One of them got in. Quick, SHOOT IT!”
     EEPlaySoundEvent *soundEvent3 = [[EEPlaySoundEvent alloc] init];
     soundEvent3.eventStartSound = [[EESound alloc] initWithSoundId:6 andSpeaker:1];
-    soundEvent3.autoAdvanceDelay = 5.5;
+    soundEvent3.autoAdvanceDelay = 4.0;
     [events addObject:soundEvent3];
 
 //     Noise comes from right side speaker.
@@ -97,7 +97,7 @@
     deviceState3.desiredAttributeState = @"closed";
 //     Noise comes from left side speaker.
     deviceState3.eventSuccessSound = [[EESound alloc] initWithSoundId:2 andSpeaker:1];
-    deviceState3.successDelay = 2.0;
+    deviceState3.successDelay = 1.5;
     [events addObject:deviceState3];
 
 //     shoot the camera
@@ -109,8 +109,13 @@
     [events addObject:shootEvent2];
 
     //     “throw in the water.”
+    EEPlaySoundEvent *soundEvent9 = [[EEPlaySoundEvent alloc] init];
+    soundEvent9.eventStartSound = [[EESound alloc] initWithSoundId:19 andSpeaker:1];
+    soundEvent9.autoAdvanceDelay = 6.0;
+    [events addObject:soundEvent9];
+
     EEDeviceStateChangeEvent *deviceState4 = [[EEDeviceStateChangeEvent alloc] init];
-    deviceState4.eventStartSound = [[EESound alloc] initWithSoundId:19 andSpeaker:1];
+    deviceState4.eventStartSound = [[EESound alloc] initWithSoundId:14 andSpeaker:0];
     //     Wait for water sensor.
     deviceState4.deviceType = @"water-sensor";
     deviceState4.attributeName = @"water-state";
