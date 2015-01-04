@@ -67,4 +67,10 @@
     }
 }
 
+- (void)fadeOut:(NSUInteger)speakerId {
+    if (self.soundDelegate) {
+        [self.soundDelegate fadeOut:speakerId];
+    }
+}
+
 @end
