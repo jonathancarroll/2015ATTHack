@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DigitalLifeConnector.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController {
+    DigitalLifeConnector *dl;
+}
 
 
 @end
