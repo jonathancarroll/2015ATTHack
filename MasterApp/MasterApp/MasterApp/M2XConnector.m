@@ -33,7 +33,7 @@
             if(lastTarget1Value == -1) {
                 lastTarget1Value = [value intValue];
             } else {
-                if(lastTarget1Value < [value intValue]) {
+                if(lastTarget1Value != [value intValue]) {
                     lastTarget1Value = [value intValue];
                     NSLog(@"HIT!!!!!!!1111111");
                     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
@@ -58,7 +58,7 @@
             if(lastTarget2Value == -1) {
                 lastTarget2Value = [value intValue];
             } else {
-                if(lastTarget2Value < [value intValue]) {
+                if(lastTarget2Value != [value intValue]) {
                     lastTarget2Value = [value intValue];
                     NSLog(@"HIT!!!!!!!222222");
                     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];

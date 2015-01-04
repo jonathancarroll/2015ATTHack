@@ -13,20 +13,36 @@
 @implementation EEDeviceStateChangeEvent
 
 - (void)setup {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(update:) name:DigitalLifeConntectorDevicesUpdatedNotification object:nil];
+    
 
     [super setup];
 }
 
 - (void)start {
 
+    if([self requirementsMet]) {
+        [self succeed];
+        return;
+    }
+    
     [super start];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(update:) name:DigitalLifeConntectorDevicesUpdatedNotification object:nil];
 }
 
 - (void)update:(NSNotification *)notification {
     NSLog(@"Device State update looking for %@ for %@ on %@", self.desiredAttributeState, self.attributeName, self.deviceType);
-    DigitalLifeConnector *digitalLife = (DigitalLifeConnector *)notification.object;
+    
+    if([self requirementsMet]) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self];
+        [self succeed];
+    }
+    
+}
 
+-(BOOL)requirementsMet {
+    DigitalLifeConnector *digitalLife = [DigitalLifeConnector sharedConnector];
+    
     bool pass = YES; //Assume success
     for(DLDevice *device in digitalLife.devices) {
         if([device.deviceType isEqualToString:self.deviceType]) {
@@ -40,11 +56,7 @@
         }
     }
     
-    if(pass) {
-        [[NSNotificationCenter defaultCenter] removeObserver:self];
-        [self succeed];
-    }
-    
+    return pass;
 }
 
 @end

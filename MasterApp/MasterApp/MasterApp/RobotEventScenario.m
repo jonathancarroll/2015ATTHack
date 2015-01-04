@@ -104,7 +104,7 @@
     EEShootTargetEvent *shootEvent2 = [[EEShootTargetEvent alloc] init];
     shootEvent2.eventStartSound = [[EESound alloc] initWithSoundId:8 andSpeaker:1];
 //     Wait for target to be hit.
-    shootEvent2.targetId = @"a7bee74cd9a58ceeec3fcc38fa65193c";
+    shootEvent2.targetId = @"0b9b634bd7314a76292c8ab5b9495115";
     shootEvent2.eventSuccessSound = [[EESound alloc] initWithSoundId:15 andSpeaker:1];
     [events addObject:shootEvent2];
 
