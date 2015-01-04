@@ -18,12 +18,23 @@
 
 #import "DigitalLifeConnector.h"
 #import "DLDevice.h"
+#import "EEControlEvent.h"
+
+static DigitalLifeConnector *sharedConnector = nil;
 
 @implementation DigitalLifeConnector
 
++(DigitalLifeConnector*)sharedConnector {
+    if(sharedConnector) {
+        return sharedConnector;
+    }
+    sharedConnector = [[DigitalLifeConnector alloc] init];
+    return sharedConnector;
+}
+
 -(id)init {
     self = [super init];
-    
+    sharedConnector = self;
     self.devices = [[NSMutableArray alloc] init];
     
     [self authenticate];
@@ -152,6 +163,49 @@
         });
         
     });
+}
+
+-(void)updateDevice:(DLDevice*)device attribute:(NSString*)attributeName toValue:(NSString*)value withCompletionHandler:(void (^)(bool success))completion {
+    
+    dispatch_async(dispatch_get_global_queue(0,0), ^{
+        
+        NSString *url = [NSString stringWithFormat:@"%@%@/devices/%@/%@/%@", kDLBaseURL, [self getGateway], device.deviceGuid, attributeName, value];
+        //Generate Request
+        NSLog(@"Backend URL: %@", url);
+        
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:15.0];
+        [request setHTTPMethod:@"POST"];
+        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+        [request setValue:kDLAppKey forHTTPHeaderField:@"appKey"];
+        [request setValue:[self getRequestToken] forHTTPHeaderField:@"requestToken"];
+        [request setValue:[self getToken] forHTTPHeaderField:@"authToken"];
+        
+        NSError *error = nil;
+        NSURLResponse *response = nil;
+        NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+        
+        if(error) {
+            NSLog(@"Error updating device with DL backend: %@", [error localizedDescription]);
+            completion(false);
+            return;
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSError *jsonError = nil;
+            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
+            if(jsonError) {
+                NSLog(@"Error parsing device update json: %@", [error localizedDescription]);
+                completion(false);
+                return;
+            }
+            
+            NSLog(@"Update completed successfully: %@", dict);
+            completion(true);
+            
+        });
+    });
+
+    
 }
 
 @end
