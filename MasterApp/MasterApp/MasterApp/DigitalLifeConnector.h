@@ -11,7 +11,9 @@
 
 #define DigitalLifeConntectorDevicesUpdatedNotification @"DigitalLifeConntectorDevicesUpdatedNotification"
 
-@interface DigitalLifeConnector : NSObject
+@interface DigitalLifeConnector : NSObject {
+    BOOL firstRun;
+}
 
 @property (strong) NSMutableArray *devices;
 

@@ -54,7 +54,7 @@ static BOOL VERBOSE_MODE = YES;
     }
     
     if (VERBOSE_MODE) {
-        NSLog(@"M2X: %@", request.URL);
+        //NSLog(@"M2X: %@", request.URL);
     }
     
     M2XResponseCallback callback = ^(NSData *data, NSURLResponse *response, NSError *error) {
