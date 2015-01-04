@@ -41,25 +41,25 @@
     deviceState1.desiredAttributeState = @"lock";
 //     “Good job!”
     deviceState1.eventSuccessSound = [[EESound alloc] initWithSoundId:2 andSpeaker:1];
-    deviceState1.successDelay = 2.0;
+    deviceState1.successDelay = 3.0;
     [events addObject:deviceState1];
 
 //     “Listen. Do you hear them?” (Distant robot sounds)
     EEPlaySoundEvent *soundEvent2 = [[EEPlaySoundEvent alloc] init];
     soundEvent2.eventStartSound = [[EESound alloc] initWithSoundId:3 andSpeaker:1];
-    soundEvent2.autoAdvanceDelay = 3.0;
+    soundEvent2.autoAdvanceDelay = 4.0;
     [events addObject:soundEvent2];
 
 //      robot sounds
     EEPlaySoundEvent *soundEvent6 = [[EEPlaySoundEvent alloc] init];
     soundEvent6.eventStartSound = [[EESound alloc] initWithSoundId:17 andSpeaker:1];
-    soundEvent6.autoAdvanceDelay = 3.0;
+    soundEvent6.autoAdvanceDelay = 7.0;
     [events addObject:soundEvent6];
 
     //     crash / gas grenade explosion
     EEPlaySoundEvent *soundEvent7 = [[EEPlaySoundEvent alloc] init];
     soundEvent7.eventStartSound = [[EESound alloc] initWithSoundId:16 andSpeaker:1];
-    soundEvent7.autoAdvanceDelay = 3.0;
+    soundEvent7.autoAdvanceDelay = 4.0;
     [events addObject:soundEvent7];
 
 //     “Oh no! They got a toxic gas grenade in somehow. Open a window to vent the gas.”
