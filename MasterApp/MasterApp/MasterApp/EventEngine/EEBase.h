@@ -19,6 +19,12 @@
 
 @end
 
+@protocol EESoundDelegate <NSObject>
+
+- (void)playSound:(NSUInteger)soundId onSpeaker:(NSUInteger)speakerId;
+
+@end
+
 @class EESound;
 
 @interface EEBase : NSObject
@@ -26,7 +32,8 @@
 @property (strong, nonatomic) EESound *eventStartSound;
 @property (strong, nonatomic) EESound *eventSuccessSound;
 @property (nonatomic) NSTimeInterval autoAdvanceDelay;
-@property (weak) id<EEEventDelegate> delegate;
+@property (weak) id<EEEventDelegate> eventDelegate;
+@property (weak) id<EESoundDelegate> soundDelegate;
 
 - (void)setup;
 - (void)start;
