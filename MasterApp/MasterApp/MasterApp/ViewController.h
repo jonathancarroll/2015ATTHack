@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "DigitalLifeConnector.h"
+#import "M2XConnector.h"
 
 @interface ViewController : UIViewController {
     DigitalLifeConnector *dl;
+    M2XConnector *m2x;
+    
 }
 
 
