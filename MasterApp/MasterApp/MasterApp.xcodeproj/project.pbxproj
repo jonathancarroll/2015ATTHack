@@ -16,6 +16,16 @@
 		81B06EEE1A58B46E00909EB9 /* MasterAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B06EED1A58B46E00909EB9 /* MasterAppTests.m */; };
 		81B06EF91A58B53400909EB9 /* DigitalLifeConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B06EF81A58B53400909EB9 /* DigitalLifeConnector.m */; };
 		81B06EFC1A58FC4200909EB9 /* DLDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B06EFB1A58FC4200909EB9 /* DLDevice.m */; };
+		81B06F131A59143700909EB9 /* M2XClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B06F001A59143700909EB9 /* M2XClient.m */; };
+		81B06F141A59143700909EB9 /* M2XClient+HTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B06F021A59143700909EB9 /* M2XClient+HTTP.m */; };
+		81B06F151A59143700909EB9 /* M2XDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B06F041A59143700909EB9 /* M2XDevice.m */; };
+		81B06F161A59143700909EB9 /* M2XDistribution.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B06F061A59143700909EB9 /* M2XDistribution.m */; };
+		81B06F171A59143700909EB9 /* M2XKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B06F081A59143700909EB9 /* M2XKey.m */; };
+		81B06F181A59143700909EB9 /* M2XResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B06F0A1A59143700909EB9 /* M2XResource.m */; };
+		81B06F191A59143700909EB9 /* M2XResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B06F0C1A59143700909EB9 /* M2XResponse.m */; };
+		81B06F1A1A59143700909EB9 /* M2XStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B06F0E1A59143700909EB9 /* M2XStream.m */; };
+		81B06F1B1A59143700909EB9 /* M2XTrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B06F101A59143700909EB9 /* M2XTrigger.m */; };
+		81B06F1C1A59143700909EB9 /* NSDate+M2X.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B06F121A59143700909EB9 /* NSDate+M2X.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +56,27 @@
 		81B06EF81A58B53400909EB9 /* DigitalLifeConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DigitalLifeConnector.m; sourceTree = "<group>"; };
 		81B06EFA1A58FC4200909EB9 /* DLDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLDevice.h; sourceTree = "<group>"; };
 		81B06EFB1A58FC4200909EB9 /* DLDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLDevice.m; sourceTree = "<group>"; };
+		81B06EFE1A59143700909EB9 /* M2X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2X.h; sourceTree = "<group>"; };
+		81B06EFF1A59143700909EB9 /* M2XClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2XClient.h; sourceTree = "<group>"; };
+		81B06F001A59143700909EB9 /* M2XClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2XClient.m; sourceTree = "<group>"; };
+		81B06F011A59143700909EB9 /* M2XClient+HTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "M2XClient+HTTP.h"; sourceTree = "<group>"; };
+		81B06F021A59143700909EB9 /* M2XClient+HTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "M2XClient+HTTP.m"; sourceTree = "<group>"; };
+		81B06F031A59143700909EB9 /* M2XDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2XDevice.h; sourceTree = "<group>"; };
+		81B06F041A59143700909EB9 /* M2XDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2XDevice.m; sourceTree = "<group>"; };
+		81B06F051A59143700909EB9 /* M2XDistribution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2XDistribution.h; sourceTree = "<group>"; };
+		81B06F061A59143700909EB9 /* M2XDistribution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2XDistribution.m; sourceTree = "<group>"; };
+		81B06F071A59143700909EB9 /* M2XKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2XKey.h; sourceTree = "<group>"; };
+		81B06F081A59143700909EB9 /* M2XKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2XKey.m; sourceTree = "<group>"; };
+		81B06F091A59143700909EB9 /* M2XResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2XResource.h; sourceTree = "<group>"; };
+		81B06F0A1A59143700909EB9 /* M2XResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2XResource.m; sourceTree = "<group>"; };
+		81B06F0B1A59143700909EB9 /* M2XResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2XResponse.h; sourceTree = "<group>"; };
+		81B06F0C1A59143700909EB9 /* M2XResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2XResponse.m; sourceTree = "<group>"; };
+		81B06F0D1A59143700909EB9 /* M2XStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2XStream.h; sourceTree = "<group>"; };
+		81B06F0E1A59143700909EB9 /* M2XStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2XStream.m; sourceTree = "<group>"; };
+		81B06F0F1A59143700909EB9 /* M2XTrigger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2XTrigger.h; sourceTree = "<group>"; };
+		81B06F101A59143700909EB9 /* M2XTrigger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2XTrigger.m; sourceTree = "<group>"; };
+		81B06F111A59143700909EB9 /* NSDate+M2X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+M2X.h"; sourceTree = "<group>"; };
+		81B06F121A59143700909EB9 /* NSDate+M2X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+M2X.m"; sourceTree = "<group>"; };
 		CA1E08DD1A5911610038D383 /* TransferService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransferService.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +119,7 @@
 		81B06ED01A58B46E00909EB9 /* MasterApp */ = {
 			isa = PBXGroup;
 			children = (
+				81B06EFD1A59142400909EB9 /* M2X */,
 				CA1E08DD1A5911610038D383 /* TransferService.h */,
 				81B06ED51A58B46E00909EB9 /* AppDelegate.h */,
 				81B06ED61A58B46E00909EB9 /* AppDelegate.m */,
@@ -129,6 +161,34 @@
 				81B06EEC1A58B46E00909EB9 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		81B06EFD1A59142400909EB9 /* M2X */ = {
+			isa = PBXGroup;
+			children = (
+				81B06EFE1A59143700909EB9 /* M2X.h */,
+				81B06EFF1A59143700909EB9 /* M2XClient.h */,
+				81B06F001A59143700909EB9 /* M2XClient.m */,
+				81B06F011A59143700909EB9 /* M2XClient+HTTP.h */,
+				81B06F021A59143700909EB9 /* M2XClient+HTTP.m */,
+				81B06F031A59143700909EB9 /* M2XDevice.h */,
+				81B06F041A59143700909EB9 /* M2XDevice.m */,
+				81B06F051A59143700909EB9 /* M2XDistribution.h */,
+				81B06F061A59143700909EB9 /* M2XDistribution.m */,
+				81B06F071A59143700909EB9 /* M2XKey.h */,
+				81B06F081A59143700909EB9 /* M2XKey.m */,
+				81B06F091A59143700909EB9 /* M2XResource.h */,
+				81B06F0A1A59143700909EB9 /* M2XResource.m */,
+				81B06F0B1A59143700909EB9 /* M2XResponse.h */,
+				81B06F0C1A59143700909EB9 /* M2XResponse.m */,
+				81B06F0D1A59143700909EB9 /* M2XStream.h */,
+				81B06F0E1A59143700909EB9 /* M2XStream.m */,
+				81B06F0F1A59143700909EB9 /* M2XTrigger.h */,
+				81B06F101A59143700909EB9 /* M2XTrigger.m */,
+				81B06F111A59143700909EB9 /* NSDate+M2X.h */,
+				81B06F121A59143700909EB9 /* NSDate+M2X.m */,
+			);
+			name = M2X;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,11 +291,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81B06F131A59143700909EB9 /* M2XClient.m in Sources */,
 				81B06EDA1A58B46E00909EB9 /* ViewController.m in Sources */,
 				81B06ED71A58B46E00909EB9 /* AppDelegate.m in Sources */,
 				81B06EF91A58B53400909EB9 /* DigitalLifeConnector.m in Sources */,
 				81B06EFC1A58FC4200909EB9 /* DLDevice.m in Sources */,
+				81B06F181A59143700909EB9 /* M2XResource.m in Sources */,
+				81B06F1B1A59143700909EB9 /* M2XTrigger.m in Sources */,
+				81B06F191A59143700909EB9 /* M2XResponse.m in Sources */,
+				81B06F171A59143700909EB9 /* M2XKey.m in Sources */,
+				81B06F151A59143700909EB9 /* M2XDevice.m in Sources */,
+				81B06F161A59143700909EB9 /* M2XDistribution.m in Sources */,
+				81B06F1C1A59143700909EB9 /* NSDate+M2X.m in Sources */,
 				81B06ED41A58B46E00909EB9 /* main.m in Sources */,
+				81B06F1A1A59143700909EB9 /* M2XStream.m in Sources */,
+				81B06F141A59143700909EB9 /* M2XClient+HTTP.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
