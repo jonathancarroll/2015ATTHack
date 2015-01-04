@@ -26,6 +26,11 @@
 		B9F9163915D5806500B3B398 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F9163815D5806500B3B398 /* ViewController.m */; };
 		B9F9164115D5808200B3B398 /* BTLECentralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F9164015D5808200B3B398 /* BTLECentralViewController.m */; };
 		B9F9164415D5808F00B3B398 /* BTLEPeripheralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F9164315D5808F00B3B398 /* BTLEPeripheralViewController.m */; };
+		CA1E08D51A58E8DD0038D383 /* OXAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1E08D21A58E8DD0038D383 /* OXAudioManager.m */; };
+		CA1E08D61A58E8DD0038D383 /* OXAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1E08D41A58E8DD0038D383 /* OXAudioPlayer.m */; };
+		CA1E08D81A58ED0F0038D383 /* Dizzyollie.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CA1E08D71A58ED0F0038D383 /* Dizzyollie.mp3 */; };
+		CA1E08DA1A58ED1B0038D383 /* Firmware FlagGrab.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CA1E08D91A58ED1B0038D383 /* Firmware FlagGrab.mp3 */; };
+		CA1E08DC1A58F2970038D383 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1E08DB1A58F2970038D383 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +63,13 @@
 		B9F9164215D5808F00B3B398 /* BTLEPeripheralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTLEPeripheralViewController.h; sourceTree = "<group>"; };
 		B9F9164315D5808F00B3B398 /* BTLEPeripheralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTLEPeripheralViewController.m; sourceTree = "<group>"; };
 		B9F9164715D583E500B3B398 /* TransferService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransferService.h; sourceTree = "<group>"; };
+		CA1E08D11A58E8DD0038D383 /* OXAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OXAudioManager.h; sourceTree = "<group>"; };
+		CA1E08D21A58E8DD0038D383 /* OXAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OXAudioManager.m; sourceTree = "<group>"; };
+		CA1E08D31A58E8DD0038D383 /* OXAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OXAudioPlayer.h; sourceTree = "<group>"; };
+		CA1E08D41A58E8DD0038D383 /* OXAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OXAudioPlayer.m; sourceTree = "<group>"; };
+		CA1E08D71A58ED0F0038D383 /* Dizzyollie.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Dizzyollie.mp3; sourceTree = "<group>"; };
+		CA1E08D91A58ED1B0038D383 /* Firmware FlagGrab.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Firmware FlagGrab.mp3"; sourceTree = "<group>"; };
+		CA1E08DB1A58F2970038D383 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA1E08DC1A58F2970038D383 /* AVFoundation.framework in Frameworks */,
 				B92B559015E4621C0036A8A2 /* CoreBluetooth.framework in Frameworks */,
 				B9F9161A15D5806400B3B398 /* UIKit.framework in Frameworks */,
 				B9F9161C15D5806400B3B398 /* Foundation.framework in Frameworks */,
@@ -95,6 +108,7 @@
 		B9F9161815D5806400B3B398 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CA1E08DB1A58F2970038D383 /* AVFoundation.framework */,
 				B92B558F15E4621C0036A8A2 /* CoreBluetooth.framework */,
 				B9F9161915D5806400B3B398 /* UIKit.framework */,
 				B9F9161B15D5806400B3B398 /* Foundation.framework */,
@@ -106,6 +120,12 @@
 		B9F9161F15D5806400B3B398 /* BTLE Transfer */ = {
 			isa = PBXGroup;
 			children = (
+				CA1E08D91A58ED1B0038D383 /* Firmware FlagGrab.mp3 */,
+				CA1E08D71A58ED0F0038D383 /* Dizzyollie.mp3 */,
+				CA1E08D11A58E8DD0038D383 /* OXAudioManager.h */,
+				CA1E08D21A58E8DD0038D383 /* OXAudioManager.m */,
+				CA1E08D31A58E8DD0038D383 /* OXAudioPlayer.h */,
+				CA1E08D41A58E8DD0038D383 /* OXAudioPlayer.m */,
 				B9F9162815D5806400B3B398 /* AppDelegate.h */,
 				B9F9162915D5806400B3B398 /* AppDelegate.m */,
 				B9F9163115D5806500B3B398 /* MainStoryboard_iPhone.storyboard */,
@@ -195,7 +215,9 @@
 			files = (
 				B9F9162415D5806400B3B398 /* InfoPlist.strings in Resources */,
 				B9F9163315D5806500B3B398 /* MainStoryboard_iPhone.storyboard in Resources */,
+				CA1E08DA1A58ED1B0038D383 /* Firmware FlagGrab.mp3 in Resources */,
 				B9F9163615D5806500B3B398 /* MainStoryboard_iPad.storyboard in Resources */,
+				CA1E08D81A58ED0F0038D383 /* Dizzyollie.mp3 in Resources */,
 				B92B557315E453690036A8A2 /* Icon-57.png in Resources */,
 				B92B557515E4536C0036A8A2 /* Icon-114.png in Resources */,
 				B92B557715E4541E0036A8A2 /* Icon-72.png in Resources */,
@@ -216,8 +238,10 @@
 				B9F9162615D5806400B3B398 /* main.m in Sources */,
 				B9F9162A15D5806400B3B398 /* AppDelegate.m in Sources */,
 				B9F9163915D5806500B3B398 /* ViewController.m in Sources */,
+				CA1E08D51A58E8DD0038D383 /* OXAudioManager.m in Sources */,
 				B9F9164115D5808200B3B398 /* BTLECentralViewController.m in Sources */,
 				B9F9164415D5808F00B3B398 /* BTLEPeripheralViewController.m in Sources */,
+				CA1E08D61A58E8DD0038D383 /* OXAudioPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
