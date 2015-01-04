@@ -32,6 +32,7 @@
 @property (strong, nonatomic) EESound *eventStartSound;
 @property (strong, nonatomic) EESound *eventSuccessSound;
 @property (nonatomic) NSTimeInterval autoAdvanceDelay;
+@property (nonatomic) NSTimeInterval successDelay;
 @property (weak) id<EEEventDelegate> eventDelegate;
 @property (weak) id<EESoundDelegate> soundDelegate;
 

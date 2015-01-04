@@ -27,6 +27,9 @@
 		81B06F1B1A59143700909EB9 /* M2XTrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B06F101A59143700909EB9 /* M2XTrigger.m */; };
 		81B06F1C1A59143700909EB9 /* NSDate+M2X.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B06F121A59143700909EB9 /* NSDate+M2X.m */; };
 		81B06F1F1A59164700909EB9 /* M2XConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B06F1E1A59164700909EB9 /* M2XConnector.m */; };
+		81B06F261A595E5900909EB9 /* Icon120.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B06F241A595E5900909EB9 /* Icon120.png */; };
+		81B06F271A595E5900909EB9 /* Icon180.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B06F251A595E5900909EB9 /* Icon180.png */; };
+		81B06F291A595EFD00909EB9 /* HiRes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 81B06F281A595EFD00909EB9 /* HiRes.jpg */; };
 		CA1E08E01A59331B0038D383 /* EEBase.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1E08DF1A59331B0038D383 /* EEBase.m */; };
 		CA1E08E41A5935A60038D383 /* EESound.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1E08E31A5935A60038D383 /* EESound.m */; };
 		CA1E08E71A59383F0038D383 /* EEDeviceStateChangeEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1E08E61A59383F0038D383 /* EEDeviceStateChangeEvent.m */; };
@@ -89,6 +92,9 @@
 		81B06F121A59143700909EB9 /* NSDate+M2X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+M2X.m"; sourceTree = "<group>"; };
 		81B06F1D1A59164700909EB9 /* M2XConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2XConnector.h; sourceTree = "<group>"; };
 		81B06F1E1A59164700909EB9 /* M2XConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2XConnector.m; sourceTree = "<group>"; };
+		81B06F241A595E5900909EB9 /* Icon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon120.png; sourceTree = "<group>"; };
+		81B06F251A595E5900909EB9 /* Icon180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon180.png; sourceTree = "<group>"; };
+		81B06F281A595EFD00909EB9 /* HiRes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = HiRes.jpg; sourceTree = "<group>"; };
 		CA1E08DD1A5911610038D383 /* TransferService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransferService.h; sourceTree = "<group>"; };
 		CA1E08DF1A59331B0038D383 /* EEBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEBase.m; path = EventEngine/EEBase.m; sourceTree = "<group>"; };
 		CA1E08E11A5933380038D383 /* EEBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EEBase.h; path = EventEngine/EEBase.h; sourceTree = "<group>"; };
@@ -175,6 +181,9 @@
 		81B06ED11A58B46E00909EB9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				81B06F281A595EFD00909EB9 /* HiRes.jpg */,
+				81B06F241A595E5900909EB9 /* Icon120.png */,
+				81B06F251A595E5900909EB9 /* Icon180.png */,
 				81B06ED21A58B46E00909EB9 /* Info.plist */,
 				81B06ED31A58B46E00909EB9 /* main.m */,
 			);
@@ -330,8 +339,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				81B06EDD1A58B46E00909EB9 /* Main.storyboard in Resources */,
+				81B06F261A595E5900909EB9 /* Icon120.png in Resources */,
 				81B06EE21A58B46E00909EB9 /* LaunchScreen.xib in Resources */,
 				81B06EDF1A58B46E00909EB9 /* Images.xcassets in Resources */,
+				81B06F271A595E5900909EB9 /* Icon180.png in Resources */,
+				81B06F291A595EFD00909EB9 /* HiRes.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

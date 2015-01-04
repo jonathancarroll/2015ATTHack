@@ -31,6 +31,18 @@
 		CA1E08D81A58ED0F0038D383 /* Dizzyollie.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CA1E08D71A58ED0F0038D383 /* Dizzyollie.mp3 */; };
 		CA1E08DA1A58ED1B0038D383 /* Firmware FlagGrab.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CA1E08D91A58ED1B0038D383 /* Firmware FlagGrab.mp3 */; };
 		CA1E08DC1A58F2970038D383 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1E08DB1A58F2970038D383 /* AVFoundation.framework */; };
+		CA1E09061A597A0D0038D383 /* 0-invading.wav in Resources */ = {isa = PBXBuildFile; fileRef = CA1E08FA1A597A0D0038D383 /* 0-invading.wav */; };
+		CA1E09071A597A0D0038D383 /* 1-lockdoor.wav in Resources */ = {isa = PBXBuildFile; fileRef = CA1E08FB1A597A0D0038D383 /* 1-lockdoor.wav */; };
+		CA1E09081A597A0D0038D383 /* 2-goodjob.wav in Resources */ = {isa = PBXBuildFile; fileRef = CA1E08FC1A597A0D0038D383 /* 2-goodjob.wav */; };
+		CA1E09091A597A0D0038D383 /* 3-listen.wav in Resources */ = {isa = PBXBuildFile; fileRef = CA1E08FD1A597A0D0038D383 /* 3-listen.wav */; };
+		CA1E090A1A597A0D0038D383 /* 4-toxicgas.wav in Resources */ = {isa = PBXBuildFile; fileRef = CA1E08FE1A597A0D0038D383 /* 4-toxicgas.wav */; };
+		CA1E090B1A597A0D0038D383 /* 5-goodgas.wav in Resources */ = {isa = PBXBuildFile; fileRef = CA1E08FF1A597A0D0038D383 /* 5-goodgas.wav */; };
+		CA1E090C1A597A0D0038D383 /* 6-shootit1.wav in Resources */ = {isa = PBXBuildFile; fileRef = CA1E09001A597A0D0038D383 /* 6-shootit1.wav */; };
+		CA1E090D1A597A0D0038D383 /* 7-shutwindow.wav in Resources */ = {isa = PBXBuildFile; fileRef = CA1E09011A597A0D0038D383 /* 7-shutwindow.wav */; };
+		CA1E090E1A597A0D0038D383 /* 8-keepthemout.wav in Resources */ = {isa = PBXBuildFile; fileRef = CA1E09021A597A0D0038D383 /* 8-keepthemout.wav */; };
+		CA1E090F1A597A0D0038D383 /* 9-chased.wav in Resources */ = {isa = PBXBuildFile; fileRef = CA1E09031A597A0D0038D383 /* 9-chased.wav */; };
+		CA1E09101A597A0D0038D383 /* 10-safe.wav in Resources */ = {isa = PBXBuildFile; fileRef = CA1E09041A597A0D0038D383 /* 10-safe.wav */; };
+		CA1E09111A597A0D0038D383 /* 11-funny.wav in Resources */ = {isa = PBXBuildFile; fileRef = CA1E09051A597A0D0038D383 /* 11-funny.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +82,18 @@
 		CA1E08D71A58ED0F0038D383 /* Dizzyollie.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Dizzyollie.mp3; sourceTree = "<group>"; };
 		CA1E08D91A58ED1B0038D383 /* Firmware FlagGrab.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Firmware FlagGrab.mp3"; sourceTree = "<group>"; };
 		CA1E08DB1A58F2970038D383 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		CA1E08FA1A597A0D0038D383 /* 0-invading.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "0-invading.wav"; path = "../../MasterApp/MasterApp/MasterApp/Sounds/0-invading.wav"; sourceTree = "<group>"; };
+		CA1E08FB1A597A0D0038D383 /* 1-lockdoor.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "1-lockdoor.wav"; path = "../../MasterApp/MasterApp/MasterApp/Sounds/1-lockdoor.wav"; sourceTree = "<group>"; };
+		CA1E08FC1A597A0D0038D383 /* 2-goodjob.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "2-goodjob.wav"; path = "../../MasterApp/MasterApp/MasterApp/Sounds/2-goodjob.wav"; sourceTree = "<group>"; };
+		CA1E08FD1A597A0D0038D383 /* 3-listen.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "3-listen.wav"; path = "../../MasterApp/MasterApp/MasterApp/Sounds/3-listen.wav"; sourceTree = "<group>"; };
+		CA1E08FE1A597A0D0038D383 /* 4-toxicgas.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "4-toxicgas.wav"; path = "../../MasterApp/MasterApp/MasterApp/Sounds/4-toxicgas.wav"; sourceTree = "<group>"; };
+		CA1E08FF1A597A0D0038D383 /* 5-goodgas.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "5-goodgas.wav"; path = "../../MasterApp/MasterApp/MasterApp/Sounds/5-goodgas.wav"; sourceTree = "<group>"; };
+		CA1E09001A597A0D0038D383 /* 6-shootit1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "6-shootit1.wav"; path = "../../MasterApp/MasterApp/MasterApp/Sounds/6-shootit1.wav"; sourceTree = "<group>"; };
+		CA1E09011A597A0D0038D383 /* 7-shutwindow.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "7-shutwindow.wav"; path = "../../MasterApp/MasterApp/MasterApp/Sounds/7-shutwindow.wav"; sourceTree = "<group>"; };
+		CA1E09021A597A0D0038D383 /* 8-keepthemout.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "8-keepthemout.wav"; path = "../../MasterApp/MasterApp/MasterApp/Sounds/8-keepthemout.wav"; sourceTree = "<group>"; };
+		CA1E09031A597A0D0038D383 /* 9-chased.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "9-chased.wav"; path = "../../MasterApp/MasterApp/MasterApp/Sounds/9-chased.wav"; sourceTree = "<group>"; };
+		CA1E09041A597A0D0038D383 /* 10-safe.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "10-safe.wav"; path = "../../MasterApp/MasterApp/MasterApp/Sounds/10-safe.wav"; sourceTree = "<group>"; };
+		CA1E09051A597A0D0038D383 /* 11-funny.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "11-funny.wav"; path = "../../MasterApp/MasterApp/MasterApp/Sounds/11-funny.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +144,7 @@
 		B9F9161F15D5806400B3B398 /* BTLE Transfer */ = {
 			isa = PBXGroup;
 			children = (
-				CA1E08D91A58ED1B0038D383 /* Firmware FlagGrab.mp3 */,
-				CA1E08D71A58ED0F0038D383 /* Dizzyollie.mp3 */,
+				CA1E09121A597A140038D383 /* Sounds */,
 				CA1E08D11A58E8DD0038D383 /* OXAudioManager.h */,
 				CA1E08D21A58E8DD0038D383 /* OXAudioManager.m */,
 				CA1E08D31A58E8DD0038D383 /* OXAudioPlayer.h */,
@@ -160,6 +183,27 @@
 				B9F9162715D5806400B3B398 /* SpeakerApp-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CA1E09121A597A140038D383 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				CA1E08D91A58ED1B0038D383 /* Firmware FlagGrab.mp3 */,
+				CA1E08D71A58ED0F0038D383 /* Dizzyollie.mp3 */,
+				CA1E08FA1A597A0D0038D383 /* 0-invading.wav */,
+				CA1E08FB1A597A0D0038D383 /* 1-lockdoor.wav */,
+				CA1E08FC1A597A0D0038D383 /* 2-goodjob.wav */,
+				CA1E08FD1A597A0D0038D383 /* 3-listen.wav */,
+				CA1E08FE1A597A0D0038D383 /* 4-toxicgas.wav */,
+				CA1E08FF1A597A0D0038D383 /* 5-goodgas.wav */,
+				CA1E09001A597A0D0038D383 /* 6-shootit1.wav */,
+				CA1E09011A597A0D0038D383 /* 7-shutwindow.wav */,
+				CA1E09021A597A0D0038D383 /* 8-keepthemout.wav */,
+				CA1E09031A597A0D0038D383 /* 9-chased.wav */,
+				CA1E09041A597A0D0038D383 /* 10-safe.wav */,
+				CA1E09051A597A0D0038D383 /* 11-funny.wav */,
+			);
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,18 +257,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA1E09061A597A0D0038D383 /* 0-invading.wav in Resources */,
+				CA1E090C1A597A0D0038D383 /* 6-shootit1.wav in Resources */,
 				B9F9162415D5806400B3B398 /* InfoPlist.strings in Resources */,
 				B9F9163315D5806500B3B398 /* MainStoryboard_iPhone.storyboard in Resources */,
+				CA1E09101A597A0D0038D383 /* 10-safe.wav in Resources */,
+				CA1E09071A597A0D0038D383 /* 1-lockdoor.wav in Resources */,
 				CA1E08DA1A58ED1B0038D383 /* Firmware FlagGrab.mp3 in Resources */,
 				B9F9163615D5806500B3B398 /* MainStoryboard_iPad.storyboard in Resources */,
 				CA1E08D81A58ED0F0038D383 /* Dizzyollie.mp3 in Resources */,
+				CA1E09091A597A0D0038D383 /* 3-listen.wav in Resources */,
+				CA1E09081A597A0D0038D383 /* 2-goodjob.wav in Resources */,
 				B92B557315E453690036A8A2 /* Icon-57.png in Resources */,
 				B92B557515E4536C0036A8A2 /* Icon-114.png in Resources */,
+				CA1E090F1A597A0D0038D383 /* 9-chased.wav in Resources */,
+				CA1E090D1A597A0D0038D383 /* 7-shutwindow.wav in Resources */,
 				B92B557715E4541E0036A8A2 /* Icon-72.png in Resources */,
+				CA1E090A1A597A0D0038D383 /* 4-toxicgas.wav in Resources */,
 				B92B557915E4545B0036A8A2 /* Icon-144.png in Resources */,
 				B92B557F15E457480036A8A2 /* Default-Portrait@2x~ipad.png in Resources */,
 				B92B558115E4574D0036A8A2 /* Default-Portrait~ipad.png in Resources */,
+				CA1E090E1A597A0D0038D383 /* 8-keepthemout.wav in Resources */,
 				B920C5DD15FAB25400A2DAC6 /* Default-568h@2x.png in Resources */,
+				CA1E090B1A597A0D0038D383 /* 5-goodgas.wav in Resources */,
+				CA1E09111A597A0D0038D383 /* 11-funny.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

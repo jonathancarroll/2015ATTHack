@@ -27,6 +27,16 @@
     if (self.soundDelegate && self.eventSuccessSound) {
         [self.soundDelegate playSound:self.eventSuccessSound.soundId onSpeaker:self.eventSuccessSound.desiredSpeaker];
     }
+
+    if (self.successDelay > 0) {
+        [self performSelector:@selector(finished:) withObject:[NSNumber numberWithBool:YES] afterDelay:self.successDelay];
+    } else {
+        [self finished:YES];
+    }
+
+}
+
+- (void)finished:(BOOL)success {
     if (self.eventDelegate) {
         [self.eventDelegate eventFinished:YES];
     }

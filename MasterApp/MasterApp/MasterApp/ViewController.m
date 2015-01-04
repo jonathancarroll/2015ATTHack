@@ -49,11 +49,18 @@
 
 #pragma mark - Scenario Methods
 
+-(IBAction)startPressed:(id)sender {
+    [self loadScenario];
+    UIButton *startButton = (UIButton*)sender;
+    startButton.alpha = 0.0;
+}
+
 - (void)loadScenario {
     EEScenario *scenario = [RobotEventScenario buildScenario];
     self.scenarioRunner = [[EEScenarioRunner alloc] initWithScenario:scenario];
     self.scenarioRunner.soundDelegate = self;
     self.scenarioRunner.scenarioDelegate = self;
+    [self startScenario];
 }
 
 - (void)startScenario {
