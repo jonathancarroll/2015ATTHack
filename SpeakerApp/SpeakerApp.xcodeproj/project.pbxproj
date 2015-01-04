@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81B06F2D1A599F3E00909EB9 /* Robot Stop Walking.wav in Resources */ = {isa = PBXBuildFile; fileRef = 81B06F2A1A599F3E00909EB9 /* Robot Stop Walking.wav */; };
+		81B06F2E1A599F3E00909EB9 /* Robot Turning.wav in Resources */ = {isa = PBXBuildFile; fileRef = 81B06F2B1A599F3E00909EB9 /* Robot Turning.wav */; };
+		81B06F2F1A599F3E00909EB9 /* 14-robotwalking.wav in Resources */ = {isa = PBXBuildFile; fileRef = 81B06F2C1A599F3E00909EB9 /* 14-robotwalking.wav */; };
+		81B06F311A59A0B400909EB9 /* 15-robotdeath.wav in Resources */ = {isa = PBXBuildFile; fileRef = 81B06F301A59A0B400909EB9 /* 15-robotdeath.wav */; };
 		B920C5DD15FAB25400A2DAC6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B920C5DC15FAB25400A2DAC6 /* Default-568h@2x.png */; };
 		B92B557315E453690036A8A2 /* Icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = B92B557215E453690036A8A2 /* Icon-57.png */; };
 		B92B557515E4536C0036A8A2 /* Icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = B92B557415E4536C0036A8A2 /* Icon-114.png */; };
@@ -47,6 +51,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		81B06F2A1A599F3E00909EB9 /* Robot Stop Walking.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Robot Stop Walking.wav"; sourceTree = "<group>"; };
+		81B06F2B1A599F3E00909EB9 /* Robot Turning.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Robot Turning.wav"; sourceTree = "<group>"; };
+		81B06F2C1A599F3E00909EB9 /* 14-robotwalking.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "14-robotwalking.wav"; sourceTree = "<group>"; };
+		81B06F301A59A0B400909EB9 /* 15-robotdeath.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "15-robotdeath.wav"; sourceTree = "<group>"; };
 		B920C5DC15FAB25400A2DAC6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		B92B557215E453690036A8A2 /* Icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-57.png"; path = "../Icon-57.png"; sourceTree = "<group>"; };
 		B92B557415E4536C0036A8A2 /* Icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-114.png"; path = "../Icon-114.png"; sourceTree = "<group>"; };
@@ -190,6 +198,10 @@
 		CA1E09121A597A140038D383 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				81B06F301A59A0B400909EB9 /* 15-robotdeath.wav */,
+				81B06F2A1A599F3E00909EB9 /* Robot Stop Walking.wav */,
+				81B06F2B1A599F3E00909EB9 /* Robot Turning.wav */,
+				81B06F2C1A599F3E00909EB9 /* 14-robotwalking.wav */,
 				CA1E09131A597FD20038D383 /* ElectricalArc.wav */,
 				CA1E08D91A58ED1B0038D383 /* Firmware FlagGrab.mp3 */,
 				CA1E08D71A58ED0F0038D383 /* Dizzyollie.mp3 */,
@@ -275,12 +287,16 @@
 				B92B557315E453690036A8A2 /* Icon-57.png in Resources */,
 				B92B557515E4536C0036A8A2 /* Icon-114.png in Resources */,
 				CA1E090F1A597A0D0038D383 /* 9-chased.wav in Resources */,
+				81B06F2F1A599F3E00909EB9 /* 14-robotwalking.wav in Resources */,
 				CA1E090D1A597A0D0038D383 /* 7-shutwindow.wav in Resources */,
 				B92B557715E4541E0036A8A2 /* Icon-72.png in Resources */,
+				81B06F2D1A599F3E00909EB9 /* Robot Stop Walking.wav in Resources */,
+				81B06F2E1A599F3E00909EB9 /* Robot Turning.wav in Resources */,
 				CA1E090A1A597A0D0038D383 /* 4-toxicgas.wav in Resources */,
 				B92B557915E4545B0036A8A2 /* Icon-144.png in Resources */,
 				B92B557F15E457480036A8A2 /* Default-Portrait@2x~ipad.png in Resources */,
 				B92B558115E4574D0036A8A2 /* Default-Portrait~ipad.png in Resources */,
+				81B06F311A59A0B400909EB9 /* 15-robotdeath.wav in Resources */,
 				CA1E090E1A597A0D0038D383 /* 8-keepthemout.wav in Resources */,
 				B920C5DD15FAB25400A2DAC6 /* Default-568h@2x.png in Resources */,
 				CA1E090B1A597A0D0038D383 /* 5-goodgas.wav in Resources */,

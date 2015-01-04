@@ -150,7 +150,7 @@ static DigitalLifeConnector *sharedConnector = nil;
                     
                     //NSLog(@"We found %d devices", [self.devices count]);
                     for(DLDevice *d in self.devices) {
-                        //NSLog(@"deviceGuid: %@  deviceType: %@", d.deviceGuid, d.deviceType);
+                        NSLog(@"deviceGuid: %@  deviceType: %@ %@", d.deviceGuid, d.deviceType, d.attributes);
                     }
                     
                     [[NSNotificationCenter defaultCenter] postNotificationName:DigitalLifeConntectorDevicesUpdatedNotification object:self];

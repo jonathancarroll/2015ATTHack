@@ -72,10 +72,10 @@
 
 //     Noise comes from right side speaker.
     EEShootTargetEvent *shootEvent1 = [[EEShootTargetEvent alloc] init];
-    shootEvent1.eventStartSound = [[EESound alloc] initWithSoundId:12 andSpeaker:2];
+    shootEvent1.eventStartSound = [[EESound alloc] initWithSoundId:14 andSpeaker:2];
 //     Wait for target to be hit.
     shootEvent1.targetId = @"a7bee74cd9a58ceeec3fcc38fa65193c";
-    shootEvent1.eventSuccessSound = [[EESound alloc] initWithSoundId:12 andSpeaker:1];
+    shootEvent1.eventSuccessSound = [[EESound alloc] initWithSoundId:15 andSpeaker:1];
     [events addObject:shootEvent1];
 
 //     “Great. Now go shut that window so no more get in.”
@@ -86,7 +86,7 @@
     deviceState3.attributeName = @"contact-state";
     deviceState3.desiredAttributeState = @"closed";
 //     Noise comes from left side speaker.
-    deviceState3.eventSuccessSound = [[EESound alloc] initWithSoundId:12 andSpeaker:1];
+    deviceState3.eventSuccessSound = [[EESound alloc] initWithSoundId:14 andSpeaker:1];
     deviceState3.successDelay = 2.0;
     [events addObject:deviceState3];
 
@@ -95,7 +95,7 @@
     shootEvent2.eventStartSound = [[EESound alloc] initWithSoundId:8 andSpeaker:0];
 //     Wait for target to be hit.
     shootEvent2.targetId = @"a7bee74cd9a58ceeec3fcc38fa65193c";
-    shootEvent2.eventSuccessSound = [[EESound alloc] initWithSoundId:12 andSpeaker:1];
+    shootEvent2.eventSuccessSound = [[EESound alloc] initWithSoundId:15 andSpeaker:1];
     [events addObject:shootEvent2];
 
 //     “Excellent work. It looks like they are retreating.”
