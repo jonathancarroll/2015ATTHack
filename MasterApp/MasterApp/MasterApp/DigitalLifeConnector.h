@@ -7,11 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DLDevice.h"
 
 #define DigitalLifeConntectorDevicesUpdatedNotification @"DigitalLifeConntectorDevicesUpdatedNotification"
 
 @interface DigitalLifeConnector : NSObject
 
 @property (strong) NSMutableArray *devices;
+
+-(void)updateDevice:(DLDevice*)device attribute:(NSString*)attributeName toValue:(NSString*)value withCompletionHandler:(void (^)(bool success))completion;
+
++(DigitalLifeConnector*)sharedConnector;
 
 @end

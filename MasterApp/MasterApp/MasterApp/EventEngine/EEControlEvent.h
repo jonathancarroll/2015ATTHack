@@ -8,7 +8,9 @@
 
 #import "EEBase.h"
 
-@interface EEControlEvent : EEBase
+@interface EEControlEvent : EEBase {
+    int loopCount;
+}
 
 @property (strong, nonatomic) NSString *deviceType;
 

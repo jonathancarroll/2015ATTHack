@@ -30,7 +30,7 @@
     dl = [[DigitalLifeConnector alloc] init];
 
     m2x = [[M2XConnector alloc] init];
-_centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
+    _centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
 }
 
 - (void)didReceiveMemoryWarning {

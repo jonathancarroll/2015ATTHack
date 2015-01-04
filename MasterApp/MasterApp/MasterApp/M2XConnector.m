@@ -32,6 +32,7 @@
             } else {
                 if(lastTarget1Value < [value intValue]) {
                     lastTarget1Value = [value intValue];
+                    NSLog(@"HIT!!!!!!!1111111");
                     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
                     [dict setObject:@"a7bee74cd9a58ceeec3fcc38fa65193c" forKey:@"targetId"];
                     [[NSNotificationCenter defaultCenter] postNotificationName:M2XConnectorTargetHitNotification object:self userInfo:dict];
