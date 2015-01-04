@@ -40,6 +40,7 @@
     }
     
     if(pass) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self];
         [self succeed];
     }
     

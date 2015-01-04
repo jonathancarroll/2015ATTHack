@@ -24,6 +24,7 @@
 
 - (void)targetHit:(NSNotification *)notification {
     if ([[notification.userInfo objectForKey:@"targetId"] isEqualToString:self.targetId]) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self];
         [self succeed];
     }
 }
