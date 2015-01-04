@@ -14,6 +14,7 @@
 		81B06EDF1A58B46E00909EB9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81B06EDE1A58B46E00909EB9 /* Images.xcassets */; };
 		81B06EE21A58B46E00909EB9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81B06EE01A58B46E00909EB9 /* LaunchScreen.xib */; };
 		81B06EEE1A58B46E00909EB9 /* MasterAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B06EED1A58B46E00909EB9 /* MasterAppTests.m */; };
+		81B06EF91A58B53400909EB9 /* DigitalLifeConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B06EF81A58B53400909EB9 /* DigitalLifeConnector.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		81B06EE71A58B46E00909EB9 /* MasterAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MasterAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		81B06EEC1A58B46E00909EB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81B06EED1A58B46E00909EB9 /* MasterAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterAppTests.m; sourceTree = "<group>"; };
+		81B06EF71A58B53400909EB9 /* DigitalLifeConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DigitalLifeConnector.h; sourceTree = "<group>"; };
+		81B06EF81A58B53400909EB9 /* DigitalLifeConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DigitalLifeConnector.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				81B06EDE1A58B46E00909EB9 /* Images.xcassets */,
 				81B06EE01A58B46E00909EB9 /* LaunchScreen.xib */,
 				81B06ED11A58B46E00909EB9 /* Supporting Files */,
+				81B06EF71A58B53400909EB9 /* DigitalLifeConnector.h */,
+				81B06EF81A58B53400909EB9 /* DigitalLifeConnector.m */,
 			);
 			path = MasterApp;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 			files = (
 				81B06EDA1A58B46E00909EB9 /* ViewController.m in Sources */,
 				81B06ED71A58B46E00909EB9 /* AppDelegate.m in Sources */,
+				81B06EF91A58B53400909EB9 /* DigitalLifeConnector.m in Sources */,
 				81B06ED41A58B46E00909EB9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
