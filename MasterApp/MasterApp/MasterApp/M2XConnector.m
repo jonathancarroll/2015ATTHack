@@ -29,7 +29,7 @@
             //NSLog(@"Got streams: %@ %@", response, objects);
             M2XStream *stream = [objects firstObject];
             NSNumber *value = [stream.attributes objectForKey:@"value"];
-            NSLog(@"Got Value T1 %@", value);
+            //NSLog(@"Got Value T1 %@", value);
             if(lastTarget1Value == -1) {
                 lastTarget1Value = [value intValue];
             } else {
@@ -54,7 +54,7 @@
             //NSLog(@"Got streams: %@ %@", response, objects);
             M2XStream *stream = [objects firstObject];
             NSNumber *value = [stream.attributes objectForKey:@"value"];
-            NSLog(@"Got Value T2 %@", value);
+            //NSLog(@"Got Value T2 %@", value);
             if(lastTarget2Value == -1) {
                 lastTarget2Value = [value intValue];
             } else {
