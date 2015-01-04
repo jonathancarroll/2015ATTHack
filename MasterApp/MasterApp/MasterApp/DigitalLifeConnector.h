@@ -10,4 +10,6 @@
 
 @interface DigitalLifeConnector : NSObject
 
+@property (strong) NSMutableArray *devices;
+
 @end

@@ -12,15 +12,19 @@
 #define kDLDomain       @"DL"
 #define kDLAppKey       @"TE_BDF8DA452DF1FBD7_1"
 
-#define kAuthTokenKey   @"authToken"
-#define kGatewayId      @"gatewayId"
+#define kAuthTokenKey       @"authToken"
+#define kGatewayId          @"gatewayId"
+#define kRequestTokenKey    @"requestToken"
 
 #import "DigitalLifeConnector.h"
+#import "DLDevice.h"
 
 @implementation DigitalLifeConnector
 
 -(id)init {
     self = [super init];
+    
+    self.devices = [[NSMutableArray alloc] init];
     
     [self authenticate];
     
@@ -33,6 +37,10 @@
 
 -(NSString*)getGateway {
     return [[NSUserDefaults standardUserDefaults] objectForKey:kGatewayId];
+}
+
+-(NSString*)getRequestToken {
+    return [[NSUserDefaults standardUserDefaults] objectForKey:kRequestTokenKey];
 }
 
 -(void)authenticate {
@@ -64,6 +72,7 @@
             NSLog(@"Successfully authenticated with DL backend: %@", dict);
             NSDictionary *content = [dict objectForKey:@"content"];
             NSString *authToken = [content objectForKey:@"authToken"];
+            NSString *reqestToke = [content objectForKey:@"requestToken"];
             NSArray *gateways = [content objectForKey:@"gateways"];
             NSDictionary *gateway = [gateways firstObject];
             NSString *gatewayId = [gateway objectForKey:@"id"];
@@ -71,6 +80,7 @@
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
             [defaults setObject:authToken forKey:kAuthTokenKey];
             [defaults setObject:gatewayId forKey:kGatewayId];
+            [defaults setObject:reqestToke forKey:kRequestTokenKey];
             [defaults synchronize];
             
             
@@ -84,6 +94,9 @@
                 NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:15.0];
                 [request setHTTPMethod:@"GET"];
                 [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+                [request setValue:kDLAppKey forHTTPHeaderField:@"appKey"];
+                [request setValue:reqestToke forHTTPHeaderField:@"requestToken"];
+                [request setValue:authToken forHTTPHeaderField:@"authToken"];
                 
                 NSError *error = nil;
                 NSURLResponse *response = nil;
@@ -102,7 +115,33 @@
                         return;
                     }
                     
-                    NSLog(@"Successfully listed devices with DL backend: %@", dict);
+                    //NSLog(@"Successfully listed devices with DL backend: %@", dict);
+                    
+                    NSArray *content = [dict objectForKey:@"content"];
+                    
+                    for(NSDictionary *d in content) {
+                        DLDevice *foundDevice = nil;
+                        for(DLDevice *aDevice in self.devices) {
+                            if([aDevice.deviceGuid isEqualToString:[d objectForKey:@"deviceGuid"]]) {
+                                foundDevice = aDevice; //We already have this device in our array, just update it
+                            }
+                        }
+                        if(!foundDevice) {
+                            foundDevice = [[DLDevice alloc] init];
+                            foundDevice.deviceGuid = [d objectForKey:@"deviceGuid"];
+                            foundDevice.deviceType = [d objectForKey:@"deviceType"];
+                            [self.devices addObject:foundDevice];
+                        }
+                        
+                        foundDevice.attributes = [d objectForKey:@"attributes"];
+                        
+                    }
+                    
+                    NSLog(@"We found %d devices", [self.devices count]);
+                    for(DLDevice *d in self.devices) {
+                        NSLog(@"deviceGuid: %@  deviceType: %@", d.deviceGuid, d.deviceType);
+                    }
+                    
                 });
             });
             
