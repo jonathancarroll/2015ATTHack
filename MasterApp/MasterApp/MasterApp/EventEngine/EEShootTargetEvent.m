@@ -24,7 +24,7 @@
 
 - (void)targetHit:(NSNotification *)notification {
     if ([[notification.userInfo objectForKey:@"targetId"] isEqualToString:self.targetId]) {
-        // success
+        [self succeed];
     }
 }
 
