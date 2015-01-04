@@ -39,6 +39,7 @@
 - (void)finished:(BOOL)success {
     if (self.eventDelegate) {
         [self.eventDelegate eventFinished:YES];
+        self.eventDelegate = nil;
     }
 }
 
@@ -46,6 +47,7 @@
     
     if (self.eventDelegate) {
         [self.eventDelegate eventFinished:NO];
+        self.eventDelegate = nil;
     }
 }
 
