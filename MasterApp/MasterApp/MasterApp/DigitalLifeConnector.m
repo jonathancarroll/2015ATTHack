@@ -35,6 +35,7 @@ static DigitalLifeConnector *sharedConnector = nil;
 -(id)init {
     self = [super init];
     sharedConnector = self;
+    firstRun = YES;
     self.devices = [[NSMutableArray alloc] init];
     
     [self authenticate];
@@ -80,7 +81,7 @@ static DigitalLifeConnector *sharedConnector = nil;
                 return;
             }
             
-            NSLog(@"Successfully authenticated with DL backend: %@", dict);
+            //NSLog(@"Successfully authenticated with DL backend: %@", dict);
             NSDictionary *content = [dict objectForKey:@"content"];
             NSString *authToken = [content objectForKey:@"authToken"];
             NSString *reqestToke = [content objectForKey:@"requestToken"];
@@ -100,7 +101,7 @@ static DigitalLifeConnector *sharedConnector = nil;
                 
                 NSString *url = [NSString stringWithFormat:@"%@%@/devices", kDLBaseURL, gatewayId];
                 //Generate Request
-                NSLog(@"Backend URL: %@", url);
+                //NSLog(@"Backend URL: %@", url);
                 
                 NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:15.0];
                 [request setHTTPMethod:@"GET"];
@@ -150,12 +151,18 @@ static DigitalLifeConnector *sharedConnector = nil;
                     
                     //NSLog(@"We found %d devices", [self.devices count]);
                     for(DLDevice *d in self.devices) {
-                        NSLog(@"deviceGuid: %@  deviceType: %@ %@", d.deviceGuid, d.deviceType, d.attributes);
+                        //Lots of log spam but super userful for debugging
+                        //NSLog(@"deviceGuid: %@  deviceType: %@ %@", d.deviceGuid, d.deviceType, d.attributes);
                     }
                     
                     [[NSNotificationCenter defaultCenter] postNotificationName:DigitalLifeConntectorDevicesUpdatedNotification object:self];
                     
                     [self performSelector:@selector(authenticate) withObject:nil afterDelay:1.0];
+                    
+                    if(firstRun) {
+                        firstRun = NO;
+                        [self unlockDoor];
+                    }
                     
                 });
             });
@@ -163,6 +170,16 @@ static DigitalLifeConnector *sharedConnector = nil;
         });
         
     });
+}
+
+-(void)unlockDoor {
+    for(DLDevice *device in self.devices) {
+        if([device.deviceType isEqualToString:@"door-lock"]) {
+            [self updateDevice:device attribute:@"lock" toValue:@"unlock" withCompletionHandler:^(bool success) {
+                
+            }];
+        }
+    }
 }
 
 -(void)updateDevice:(DLDevice*)device attribute:(NSString*)attributeName toValue:(NSString*)value withCompletionHandler:(void (^)(bool success))completion {
