@@ -167,6 +167,9 @@
     [self.soundPlayers setObject:player11 forKey:[NSNumber numberWithInt:11]];
     OXAudioPlayer *player12 = [[OXAudioPlayer alloc] initWithFilename:@"Firmware FlagGrab.mp3"];
     [self.soundPlayers setObject:player12 forKey:[NSNumber numberWithInt:12]];
+    OXAudioPlayer *player13 = [[OXAudioPlayer alloc] initWithFilename:@"ElectricalArc.wav"];
+    [self.soundPlayers setObject:player13 forKey:[NSNumber numberWithInt:13]];
+
 }
 
 /** Catch when someone subscribes to our characteristic, then start sending them data

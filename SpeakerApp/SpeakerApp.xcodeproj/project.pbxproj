@@ -43,6 +43,7 @@
 		CA1E090F1A597A0D0038D383 /* 9-chased.wav in Resources */ = {isa = PBXBuildFile; fileRef = CA1E09031A597A0D0038D383 /* 9-chased.wav */; };
 		CA1E09101A597A0D0038D383 /* 10-safe.wav in Resources */ = {isa = PBXBuildFile; fileRef = CA1E09041A597A0D0038D383 /* 10-safe.wav */; };
 		CA1E09111A597A0D0038D383 /* 11-funny.wav in Resources */ = {isa = PBXBuildFile; fileRef = CA1E09051A597A0D0038D383 /* 11-funny.wav */; };
+		CA1E09141A597FD20038D383 /* ElectricalArc.wav in Resources */ = {isa = PBXBuildFile; fileRef = CA1E09131A597FD20038D383 /* ElectricalArc.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,7 @@
 		CA1E09031A597A0D0038D383 /* 9-chased.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "9-chased.wav"; path = "../../MasterApp/MasterApp/MasterApp/Sounds/9-chased.wav"; sourceTree = "<group>"; };
 		CA1E09041A597A0D0038D383 /* 10-safe.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "10-safe.wav"; path = "../../MasterApp/MasterApp/MasterApp/Sounds/10-safe.wav"; sourceTree = "<group>"; };
 		CA1E09051A597A0D0038D383 /* 11-funny.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "11-funny.wav"; path = "../../MasterApp/MasterApp/MasterApp/Sounds/11-funny.wav"; sourceTree = "<group>"; };
+		CA1E09131A597FD20038D383 /* ElectricalArc.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ElectricalArc.wav; path = ../../MasterApp/MasterApp/MasterApp/Sounds/ElectricalArc.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 		CA1E09121A597A140038D383 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				CA1E09131A597FD20038D383 /* ElectricalArc.wav */,
 				CA1E08D91A58ED1B0038D383 /* Firmware FlagGrab.mp3 */,
 				CA1E08D71A58ED0F0038D383 /* Dizzyollie.mp3 */,
 				CA1E08FA1A597A0D0038D383 /* 0-invading.wav */,
@@ -262,6 +265,7 @@
 				B9F9162415D5806400B3B398 /* InfoPlist.strings in Resources */,
 				B9F9163315D5806500B3B398 /* MainStoryboard_iPhone.storyboard in Resources */,
 				CA1E09101A597A0D0038D383 /* 10-safe.wav in Resources */,
+				CA1E09141A597FD20038D383 /* ElectricalArc.wav in Resources */,
 				CA1E09071A597A0D0038D383 /* 1-lockdoor.wav in Resources */,
 				CA1E08DA1A58ED1B0038D383 /* Firmware FlagGrab.mp3 in Resources */,
 				B9F9163615D5806500B3B398 /* MainStoryboard_iPad.storyboard in Resources */,

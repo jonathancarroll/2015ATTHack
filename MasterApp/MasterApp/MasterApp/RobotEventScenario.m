@@ -23,7 +23,7 @@
 
 //     Lights flicker / electricity sounds
     EEControlEvent *controlEvent = [[EEControlEvent alloc] init];
-    // TODO: set electricity sounds
+    controlEvent.eventStartSound = [[EESound alloc] initWithSoundId:13 andSpeaker:1];
     [events addObject:controlEvent];
 
 //     ”I’m getting word that robots are invading!”

@@ -58,7 +58,7 @@
 -(void)phase4 {
     [[DigitalLifeConnector sharedConnector] updateDevice:[self getPlug] attribute:@"switch" toValue:@"off" withCompletionHandler:^(bool success) {
         
-        if(loopCount < 6) {
+        if(loopCount < 3) {
             loopCount++;
             [self performSelector:@selector(phase1) withObject:nil afterDelay:0.3];
         } else {
