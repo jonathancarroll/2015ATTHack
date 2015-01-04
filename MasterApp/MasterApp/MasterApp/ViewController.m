@@ -149,6 +149,22 @@
     }
 }
 
+- (void)fadeOut:(NSUInteger)speakerId {
+    NSLog(@"Going to fade out");
+    if (speakerId >= [self.peripherals count]) {
+        NSLog(@"cannot play sound. index out of range");
+        return;
+    }
+    if ([self.peripherals objectForKey:[NSNumber numberWithInt:speakerId]]) {
+        CBPeripheral *peripheral = [self.peripherals objectForKey:[NSNumber numberWithInt:speakerId]];
+        CBCharacteristic *characteristic = [self.characteristics objectForKey:peripheral];
+        char* stuff[1];
+        stuff[0] = 0x02;
+        NSMutableData *data = [NSMutableData dataWithBytes:stuff length:1];
+        [peripheral writeValue:data forCharacteristic:characteristic type:CBCharacteristicWriteWithResponse];
+    }
+}
+
 - (void)soundRetry:(NSArray *)params {
     [self playSound:[[params objectAtIndex:0] integerValue] onSpeaker:[[params objectAtIndex:1] integerValue]];
 }

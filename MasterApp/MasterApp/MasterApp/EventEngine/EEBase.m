@@ -42,6 +42,10 @@
         [self.eventDelegate eventFinished:YES];
         self.eventDelegate = nil;
     }
+
+    if (self.soundDelegate) {
+        [self.soundDelegate fadeOut:self.eventSuccessSound.desiredSpeaker];
+    }
 }
 
 - (void)fail {

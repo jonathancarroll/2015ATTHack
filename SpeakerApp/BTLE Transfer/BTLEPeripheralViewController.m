@@ -54,6 +54,7 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "TransferService.h"
 #import "OXAudioPlayer.h"
+#import "OXAudioManager.h"
 
 @interface BTLEPeripheralViewController () <CBPeripheralManagerDelegate, UITextViewDelegate>
 @property (strong, nonatomic) IBOutlet UITextView           *textView;
@@ -161,6 +162,10 @@
     [self.soundPlayers setObject:player14 forKey:[NSNumber numberWithInt:14]];
     OXAudioPlayer *player15 = [[OXAudioPlayer alloc] initWithFilename:@"15-robotdeath.wav"];
     [self.soundPlayers setObject:player15 forKey:[NSNumber numberWithInt:15]];
+    OXAudioPlayer *player16 = [[OXAudioPlayer alloc] initWithFilename:@"TheGrenadeExplosion.wav"];
+    [self.soundPlayers setObject:player16 forKey:[NSNumber numberWithInt:16]];
+    OXAudioPlayer *player17 = [[OXAudioPlayer alloc] initWithFilename:@"Robot Turning.wav"];
+    [self.soundPlayers setObject:player17 forKey:[NSNumber numberWithInt:17]];
 
 }
 
@@ -205,6 +210,8 @@
         NSString *number = [NSString stringWithUTF8String:[body bytes]];
         NSLog(@"Told to play sound %X", [number intValue]);
         [self playSound:[number intValue]];
+    } else if (command == 0x02) {
+        [[OXAudioManager sharedManager].playingAudio makeObjectsPerformSelector:@selector(fadeOut)];
     }
 }
 

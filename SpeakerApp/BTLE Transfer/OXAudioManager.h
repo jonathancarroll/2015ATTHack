@@ -17,8 +17,10 @@
 #import "OXAudioPlayer.h"
 
 @interface OXAudioManager : NSObject <AVAudioPlayerDelegate> {
-	NSMutableArray *playingAudio;
+
 }
+
+@property (strong, nonatomic) NSMutableArray *playingAudio;
 
 +(OXAudioManager*)sharedManager;
 

@@ -23,7 +23,7 @@ static OXAudioManager *sharedOXAudioManager = nil;
 -(id)init {
 	self = [super init];
 	
-	playingAudio = [[NSMutableArray alloc] init];
+	self.playingAudio = [[NSMutableArray alloc] init];
 	
 	// Registers this class as the delegate of the audio session.
 	//[[AVAudioSession sharedInstance] setDelegate: self];
@@ -63,18 +63,18 @@ static OXAudioManager *sharedOXAudioManager = nil;
 
 -(void)playingAudio:(OXAudioPlayer*)player {
 	player.playing = YES;
-	[playingAudio addObject:player];
+	[self.playingAudio addObject:player];
 }
 
 #pragma mark AV Foundation delegate methods____________
 
 - (void) audioPlayerDidFinishPlaying: (AVAudioPlayer *) appSoundPlayer successfully: (BOOL) flag {
 	OXAudioPlayer *foundPlayer = nil;
-	for(OXAudioPlayer *player in playingAudio) {
+	for(OXAudioPlayer *player in self.playingAudio) {
 		if(player.player == appSoundPlayer) foundPlayer = player;
 	}
     foundPlayer.playing = NO;
-	if(foundPlayer) [playingAudio removeObject:foundPlayer];
+	if(foundPlayer) [self.playingAudio removeObject:foundPlayer];
     else ;
 	
 }
@@ -88,7 +88,7 @@ static OXAudioManager *sharedOXAudioManager = nil;
 	//		when the interruption arrived.
 	[[AVAudioSession sharedInstance] setActive: YES error: nil];
 	
-	for(OXAudioPlayer *player in playingAudio) {
+	for(OXAudioPlayer *player in self.playingAudio) {
 		[player.player prepareToPlay];
 		[player.player play];
 	}

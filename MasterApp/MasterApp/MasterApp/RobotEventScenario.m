@@ -50,7 +50,17 @@
     soundEvent2.autoAdvanceDelay = 3.0;
     [events addObject:soundEvent2];
 
-//     crash / gas grenade explosion
+//      robot sounds
+    EEPlaySoundEvent *soundEvent6 = [[EEPlaySoundEvent alloc] init];
+    soundEvent6.eventStartSound = [[EESound alloc] initWithSoundId:17 andSpeaker:1];
+    soundEvent6.autoAdvanceDelay = 3.0;
+    [events addObject:soundEvent6];
+
+    //     crash / gas grenade explosion
+    EEPlaySoundEvent *soundEvent7 = [[EEPlaySoundEvent alloc] init];
+    soundEvent7.eventStartSound = [[EESound alloc] initWithSoundId:16 andSpeaker:1];
+    soundEvent7.autoAdvanceDelay = 3.0;
+    [events addObject:soundEvent7];
 
 //     “Oh no! They got a toxic gas grenade in somehow. Open a window to vent the gas.”
     EEDeviceStateChangeEvent *deviceState2 = [[EEDeviceStateChangeEvent alloc] init];
@@ -80,19 +90,19 @@
 
 //     “Great. Now go shut that window so no more get in.”
     EEDeviceStateChangeEvent *deviceState3 = [[EEDeviceStateChangeEvent alloc] init];
-    deviceState3.eventStartSound = [[EESound alloc] initWithSoundId:7 andSpeaker:0];
+    deviceState3.eventStartSound = [[EESound alloc] initWithSoundId:7 andSpeaker:1];
 //     Wait for window to shut.
     deviceState3.deviceType = @"contact-sensor";
     deviceState3.attributeName = @"contact-state";
     deviceState3.desiredAttributeState = @"closed";
 //     Noise comes from left side speaker.
-    deviceState3.eventSuccessSound = [[EESound alloc] initWithSoundId:14 andSpeaker:1];
+    deviceState3.eventSuccessSound = [[EESound alloc] initWithSoundId:14 andSpeaker:0];
     deviceState3.successDelay = 2.0;
     [events addObject:deviceState3];
 
 //     “Hopefully that keeps them out. Lookout behind you!”
     EEShootTargetEvent *shootEvent2 = [[EEShootTargetEvent alloc] init];
-    shootEvent2.eventStartSound = [[EESound alloc] initWithSoundId:8 andSpeaker:0];
+    shootEvent2.eventStartSound = [[EESound alloc] initWithSoundId:8 andSpeaker:1];
 //     Wait for target to be hit.
     shootEvent2.targetId = @"a7bee74cd9a58ceeec3fcc38fa65193c";
     shootEvent2.eventSuccessSound = [[EESound alloc] initWithSoundId:15 andSpeaker:1];
@@ -101,7 +111,7 @@
 //     “Excellent work. It looks like they are retreating.”
     EEPlaySoundEvent *soundEvent4 = [[EEPlaySoundEvent alloc] init];
     soundEvent4.eventStartSound = [[EESound alloc] initWithSoundId:9 andSpeaker:1];
-    soundEvent4.autoAdvanceDelay = 3.0;
+    soundEvent4.autoAdvanceDelay = 4.0;
     [events addObject:soundEvent4];
 
 //     “You are safe for now.”

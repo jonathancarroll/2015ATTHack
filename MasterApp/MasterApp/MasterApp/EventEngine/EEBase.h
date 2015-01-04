@@ -23,6 +23,10 @@
 
 - (void)playSound:(NSUInteger)soundId onSpeaker:(NSUInteger)speakerId;
 
+@optional
+
+- (void)fadeOut:(NSUInteger)speakerId;
+
 @end
 
 @class EESound;
