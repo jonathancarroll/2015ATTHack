@@ -24,6 +24,7 @@
 }
 
 - (void)update:(NSNotification *)notification {
+    NSLog(@"Device State update looking for %@ for %@ on %@", self.desiredAttributeState, self.attributeName, self.deviceType);
     DigitalLifeConnector *digitalLife = (DigitalLifeConnector *)notification.object;
 
     bool pass = YES; //Assume success

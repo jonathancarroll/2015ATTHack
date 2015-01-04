@@ -15,6 +15,7 @@
 }
 
 - (void)start {
+    NSLog(@"Starting play sound event");
     [super start];
 
     [self performSelector:@selector(continue) withObject:nil afterDelay:self.autoAdvanceDelay];

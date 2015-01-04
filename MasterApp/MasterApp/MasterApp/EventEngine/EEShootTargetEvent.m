@@ -18,7 +18,7 @@
 }
 
 - (void)start {
-
+    NSLog(@"Starting shoot target event");
     [super start];
 }
 
