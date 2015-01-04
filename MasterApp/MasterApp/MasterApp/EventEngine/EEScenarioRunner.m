@@ -53,7 +53,7 @@
 
 - (void)eventFinished:(BOOL)success {
     if (success) {
-        [self startNextEvent];
+        [self performSelector:@selector(startNextEvent) withObject:nil afterDelay:0.3];
     } else {
         // TODO: do something different here
         [self endScenario];

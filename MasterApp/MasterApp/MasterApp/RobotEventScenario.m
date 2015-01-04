@@ -41,7 +41,7 @@
     deviceState1.desiredAttributeState = @"lock";
 //     “Good job!”
     deviceState1.eventSuccessSound = [[EESound alloc] initWithSoundId:2 andSpeaker:1];
-    deviceState1.successDelay = 3.0;
+    deviceState1.successDelay = 2.0;
     [events addObject:deviceState1];
 
 //     “Listen. Do you hear them?” (Distant robot sounds)
