@@ -48,6 +48,7 @@
 		CA1E09101A597A0D0038D383 /* 10-safe.wav in Resources */ = {isa = PBXBuildFile; fileRef = CA1E09041A597A0D0038D383 /* 10-safe.wav */; };
 		CA1E09111A597A0D0038D383 /* 11-funny.wav in Resources */ = {isa = PBXBuildFile; fileRef = CA1E09051A597A0D0038D383 /* 11-funny.wav */; };
 		CA1E09141A597FD20038D383 /* ElectricalArc.wav in Resources */ = {isa = PBXBuildFile; fileRef = CA1E09131A597FD20038D383 /* ElectricalArc.wav */; };
+		CA21DDC81A59C5B100A3EBCD /* TheGrenadeExplosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = CA21DDC71A59C5B100A3EBCD /* TheGrenadeExplosion.wav */; };
 		CAABA8F01A59BB9100680C19 /* Robot Turning.wav in Resources */ = {isa = PBXBuildFile; fileRef = CAABA8EF1A59BB9100680C19 /* Robot Turning.wav */; };
 		CAABA8F31A59C0BF00680C19 /* shoot-the-camera.wav in Resources */ = {isa = PBXBuildFile; fileRef = CAABA8F11A59C0BF00680C19 /* shoot-the-camera.wav */; };
 		CAABA8F41A59C0BF00680C19 /* throw-it-in-water.wav in Resources */ = {isa = PBXBuildFile; fileRef = CAABA8F21A59C0BF00680C19 /* throw-it-in-water.wav */; };
@@ -107,6 +108,7 @@
 		CA1E09041A597A0D0038D383 /* 10-safe.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "10-safe.wav"; path = "../../MasterApp/MasterApp/MasterApp/Sounds/10-safe.wav"; sourceTree = "<group>"; };
 		CA1E09051A597A0D0038D383 /* 11-funny.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "11-funny.wav"; path = "../../MasterApp/MasterApp/MasterApp/Sounds/11-funny.wav"; sourceTree = "<group>"; };
 		CA1E09131A597FD20038D383 /* ElectricalArc.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ElectricalArc.wav; path = ../../MasterApp/MasterApp/MasterApp/Sounds/ElectricalArc.wav; sourceTree = "<group>"; };
+		CA21DDC71A59C5B100A3EBCD /* TheGrenadeExplosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = TheGrenadeExplosion.wav; sourceTree = "<group>"; };
 		CAABA8EF1A59BB9100680C19 /* Robot Turning.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Robot Turning.wav"; sourceTree = "<group>"; };
 		CAABA8F11A59C0BF00680C19 /* shoot-the-camera.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "shoot-the-camera.wav"; path = "../../MasterApp/MasterApp/MasterApp/Sounds/shoot-the-camera.wav"; sourceTree = "<group>"; };
 		CAABA8F21A59C0BF00680C19 /* throw-it-in-water.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "throw-it-in-water.wav"; path = "../../MasterApp/MasterApp/MasterApp/Sounds/throw-it-in-water.wav"; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		CA1E09121A597A140038D383 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				CA21DDC71A59C5B100A3EBCD /* TheGrenadeExplosion.wav */,
 				CAABA8F11A59C0BF00680C19 /* shoot-the-camera.wav */,
 				CAABA8F21A59C0BF00680C19 /* throw-it-in-water.wav */,
 				CAABA8EF1A59BB9100680C19 /* Robot Turning.wav */,
@@ -313,6 +316,7 @@
 				B92B558115E4574D0036A8A2 /* Default-Portrait~ipad.png in Resources */,
 				CAABA8F01A59BB9100680C19 /* Robot Turning.wav in Resources */,
 				CAABA8F31A59C0BF00680C19 /* shoot-the-camera.wav in Resources */,
+				CA21DDC81A59C5B100A3EBCD /* TheGrenadeExplosion.wav in Resources */,
 				81B06F311A59A0B400909EB9 /* 15-robotdeath.wav in Resources */,
 				CA1E090E1A597A0D0038D383 /* 8-keepthemout.wav in Resources */,
 				B920C5DD15FAB25400A2DAC6 /* Default-568h@2x.png in Resources */,
